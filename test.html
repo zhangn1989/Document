@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">基本使用</h1>
+<p>使用Qt的进行TCP通讯，主要用到两个类，QTcpServer和QTcpSocket。前者主要用于服务端的监听，相当于原始socket中由socket函数创建的监听socket；后者主要用于读写数据，相当于原始socket中由accept函数返回的连接socket。</p>
+<h2 id="%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E5%A4%A7%E8%87%B4%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B%E5%A6%82%E4%B8%8B">服务端的大致使用流程如下：</h2>
+<ol>
+<li>创建QTcpServer对象，调用listen函数进行IP和端口号的监听，执行过该函数后，客户端就可以进行连接操作了，创建的服务器直接就是多连接多消息服务器，不需要我们去处理并发连接的问题。</li>
+<li>监听QTcpServer对象的newConnection信号，每当有客户端连接后就会发射该信号</li>
+<li>在newConnection的槽函数中使用nextPendingConnection函数获取连接的客户端，返回值是一个QTcpSocket对象，我们就用该对象和客户端进行数据读写</li>
+<li>得到QTcpSocket对象后绑定该对象的readyRead和disconnected信号，当客户端有数据发送过来时会发射readyRead信号，当客户端断开连接时会发射disconnected信号。</li>
+</ol>
+<p>需要注意的是，一般需要在disconnected的槽函数中通过deleteLater函数删除该连接的QTcpSocket对象，如果不进行手动删除，Qt会在QTcpServer对象销毁时自动消除所有连接的QTcpSocket对象，在此之前，那些断开的QTcpSocket对象会一直占用内存，造成内存没必要的浪费。</p>
+<h2 id="%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E5%A4%A7%E8%87%B4%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B%E5%A6%82%E4%B8%8B">客户端的大致使用流程如下：</h2>
+<ol>
+<li>创建QTcpSocket对象，绑定该对象的readyRead和disconnected信号，这点同服务端一样</li>
+<li>调用connectToHost函数连接服务端</li>
+<li>调用waitForConnected或其他函数判断是否连接成功</li>
+<li>在readyRead的槽函数中收发数据</li>
+<li>调用close函数断开连接，销毁该QTcpSocket对象</li>
+</ol>
+<p>相对于服务端，客户端的disconnected倒是没那么重要，是否需要处理看情况而定。</p>
+<h1 id="%E6%8B%86%E5%8C%85%E5%B0%81%E5%8C%85%E9%97%AE%E9%A2%98">拆包封包问题</h1>
+<p>首先需要了解的是readyRead信号的行为，该信号只有在有新数据到来时发射一次，与缓冲区中是否还有未读数据无关。比如发送端一次发来了十个字节的数据，但接收端一次只能读取五个字节，需要在一个信号响应过程中读两次，因为该信号只会发射一次。通常情况下要在槽函数中写一个循环来读取数据，如果缓冲区中的所有数据都读完了，再次调用read函数会返回0字节。
+发送端处理起来比较简单，write函数会将指定的数据无脑写入缓冲区，由Qt自行处理封包拆包问题，比较麻烦的是接收端。
+我们每次发送的数据长度是不确定的，而Qt又不管我们调用过几次write，也不管每次发送多少字节，都是无脑写入缓冲区，这样就可能回造成一个问题，如果每次发送的数据很小，接收端会一次接收到多次write的数据，如果发送的数据很大，接收端一次接收的数据又很可能不完整，需要接收几次才行，甚至还很可能在接收端的一次接收时会接收到两次不完整的数据，第一次的后半段和第二次的前半段。因此在接收端需要进行拆包封包的操作，自行拼凑我们想要的数据。</p>
+<h1 id="%E5%85%B7%E4%BD%93%E4%BE%8B%E5%AD%90">具体例子</h1>
+<p>我们首先定义一个接收端和发送端共用的数据协议</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">enum</span> ProtocolType
+{
+	TEXT = <span class="hljs-number">0</span>,
+	PICTURE,
+	END,
+	MAX
+};
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MYBSProtocol</span>
+{</span>
+	<span class="hljs-keyword">int</span> length;
+	ProtocolType type;
+	<span class="hljs-keyword">char</span> data[<span class="hljs-number">0</span>];
+};
+</div></code></pre>
+<p>然后是服务端</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Server</span> :</span> <span class="hljs-keyword">public</span> QObject
+{
+	Q_OBJECT
+
+<span class="hljs-keyword">public</span>:
+	<span class="hljs-function"><span class="hljs-keyword">explicit</span> <span class="hljs-title">Server</span><span class="hljs-params">(QObject *parent = <span class="hljs-literal">nullptr</span>)</span></span>;
+	~Server();
+
+	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">startListen</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nPort)</span></span>;
+<span class="hljs-keyword">private</span>:
+	QTcpServer *m_server;
+
+<span class="hljs-keyword">public</span> slots :
+	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onNewConnection</span><span class="hljs-params">()</span></span>;
+	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onReadyRead</span><span class="hljs-params">()</span></span>;
+	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onDisconnected</span><span class="hljs-params">()</span></span>;
+};
+
+Server::Server(QObject *parent)
+	: QObject(parent)
+{
+	m_server = <span class="hljs-keyword">new</span> QTcpServer;
+}
+
+Server::~Server()
+{
+	<span class="hljs-keyword">delete</span> m_server;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Server::startListen</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nPort)</span>
+</span>{
+	<span class="hljs-keyword">if</span> (m_server-&gt;listen(QHostAddress::Any, nPort))
+		qDebug() &lt;&lt; <span class="hljs-string">"listen port "</span>&lt;&lt; nPort &lt;&lt; <span class="hljs-string">" ok"</span>;
+	<span class="hljs-keyword">else</span>
+		qDebug() &lt;&lt; <span class="hljs-string">"listen err"</span>;
+	connect(m_server, SIGNAL(newConnection()), <span class="hljs-keyword">this</span>, SLOT(onNewConnection()));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Server::onNewConnection</span><span class="hljs-params">()</span>
+</span>{
+	QTcpSocket *socket = m_server-&gt;nextPendingConnection();
+	QString ip = socket-&gt;peerAddress().toString();
+	quint16 port = socket-&gt;peerPort();
+	qDebug() &lt;&lt; <span class="hljs-string">"new client connect:"</span> &lt;&lt; ip &lt;&lt; <span class="hljs-string">":"</span> &lt;&lt; port;
+	connect(socket, SIGNAL(readyRead()), <span class="hljs-keyword">this</span>, SLOT(onReadyRead()));
+	connect(socket, SIGNAL(disconnected()), <span class="hljs-keyword">this</span>, SLOT(onDisconnected()));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Server::onReadyRead</span><span class="hljs-params">()</span>
+</span>{
+	qDebug() &lt;&lt; <span class="hljs-string">"read client message"</span>;
+	QTcpSocket *socket = <span class="hljs-keyword">dynamic_cast</span>&lt;QTcpSocket *&gt;(sender());
+	<span class="hljs-keyword">if</span> (socket)
+	{
+		QByteArray buff;
+		buff = socket-&gt;readAll();
+		qDebug() &lt;&lt; buff;
+
+		<span class="hljs-function">QFile <span class="hljs-title">file</span><span class="hljs-params">(buff)</span></span>;
+		<span class="hljs-keyword">if</span> (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+			<span class="hljs-keyword">return</span>;
+
+		<span class="hljs-keyword">while</span> (!file.atEnd())
+		{
+			MYBSProtocol *mp = <span class="hljs-literal">nullptr</span>;
+			<span class="hljs-comment">// 处理中文乱码</span>
+			QString line = QString::fromLocal8Bit(file.readLine());
+			QString key = line.left(line.indexOf(<span class="hljs-string">':'</span>));
+			QString value = line.mid(line.indexOf(<span class="hljs-string">':'</span>) + <span class="hljs-number">1</span>);
+
+			<span class="hljs-keyword">if</span> (key == <span class="hljs-string">"text"</span>)
+			{
+				QByteArray ba = value.toLocal8Bit();
+				mp = (MYBSProtocol *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(mp) + ba.size());
+				<span class="hljs-keyword">if</span> (!mp)
+					<span class="hljs-keyword">continue</span>;
+				<span class="hljs-built_in">memset</span>(mp, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(mp) + value.size());
+				mp-&gt;type = TEXT;
+				mp-&gt;length = ba.size();
+				<span class="hljs-built_in">memcpy</span>(mp-&gt;data, ba.data(), mp-&gt;length);
+			}
+			<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key == <span class="hljs-string">"picture"</span>)
+			{
+				QFile picture(value);
+				<span class="hljs-keyword">if</span> (!picture.open(QIODevice::ReadOnly))
+					<span class="hljs-keyword">continue</span>;
+
+				QByteArray ba = picture.readAll();
+				picture.close();
+
+				mp = (MYBSProtocol *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(mp) + ba.size());
+				<span class="hljs-keyword">if</span> (!mp)
+					<span class="hljs-keyword">continue</span>;
+				<span class="hljs-built_in">memset</span>(mp, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(mp) + ba.size());
+
+				mp-&gt;type = PICTURE;
+				mp-&gt;length = ba.count();
+				<span class="hljs-built_in">memcpy</span>(mp-&gt;data, ba.data(), mp-&gt;length);
+			}
+			<span class="hljs-keyword">else</span>
+			{
+				<span class="hljs-keyword">continue</span>;
+			}
+
+			socket-&gt;write((<span class="hljs-keyword">char</span> *)mp, <span class="hljs-keyword">sizeof</span>(mp) + mp-&gt;length);
+			<span class="hljs-built_in">free</span>(mp);
+			mp = <span class="hljs-literal">nullptr</span>;
+		}
+
+		file.close();
+		MYBSProtocol mp;
+		mp.type = END;
+		mp.length = <span class="hljs-number">0</span>;
+		socket-&gt;write(QByteArray(<span class="hljs-keyword">reinterpret_cast</span>&lt;<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *&gt;(&amp;mp), <span class="hljs-keyword">sizeof</span>(mp)));
+	}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Server::onDisconnected</span><span class="hljs-params">()</span>
+</span>{
+	QTcpSocket *socket = <span class="hljs-keyword">dynamic_cast</span>&lt;QTcpSocket *&gt;(sender());
+	<span class="hljs-keyword">if</span> (socket)
+	{
+		QString ip = socket-&gt;peerAddress().toString();
+		quint16 port = socket-&gt;peerPort();
+		qDebug() &lt;&lt; <span class="hljs-string">"client disconnect:"</span> &lt;&lt; ip &lt;&lt; <span class="hljs-string">":"</span> &lt;&lt; port;
+		socket-&gt;deleteLater();
+	}
+}
+</div></code></pre>
+<p>最后是客户端，客户端的重点是拆包组包的操作</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MainWindow::onPushButtonClicked</span><span class="hljs-params">(<span class="hljs-keyword">bool</span> checked)</span>
+</span>{
+	QString url = ui-&gt;lineEdit-&gt;text();
+	QString ip = url.left(url.indexOf(<span class="hljs-string">':'</span>));
+	QString port = url.mid(url.indexOf(<span class="hljs-string">':'</span>) + <span class="hljs-number">1</span>, url.indexOf(<span class="hljs-string">'/'</span>) - url.indexOf(<span class="hljs-string">':'</span>) - <span class="hljs-number">1</span>);
+	QString file = url.mid(url.indexOf(<span class="hljs-string">'/'</span>) + <span class="hljs-number">1</span>);
+
+	QTcpSocket *socket = <span class="hljs-keyword">new</span> QTcpSocket;
+	connect(socket, &amp;QTcpSocket::readyRead, <span class="hljs-keyword">this</span>, &amp;MainWindow::onReadyRead);
+	connect(socket, &amp;QTcpSocket::disconnected, <span class="hljs-keyword">this</span>, &amp;MainWindow::onDisconnected);
+	socket-&gt;connectToHost(ip, port.toUInt());
+	<span class="hljs-keyword">if</span> (socket-&gt;waitForConnected(<span class="hljs-number">-1</span>))
+	{
+		socket-&gt;write(file.toUtf8());
+		socket-&gt;waitForBytesWritten(<span class="hljs-number">-1</span>);
+	}
+	<span class="hljs-keyword">else</span>
+	{
+		QAbstractSocket::SocketError error = socket-&gt;error();
+		QString str = socket-&gt;errorString();
+		<span class="hljs-keyword">delete</span> socket;
+		socket = <span class="hljs-literal">nullptr</span>;
+	}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MainWindow::onReadyRead</span><span class="hljs-params">()</span>
+</span>{
+	QTcpSocket *socket = <span class="hljs-keyword">dynamic_cast</span>&lt;QTcpSocket *&gt;(sender());
+	<span class="hljs-keyword">if</span> (socket)
+	{
+		<span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)
+		{
+			QByteArray buff;
+			<span class="hljs-keyword">int</span> buffLen = <span class="hljs-number">0</span>;
+			MYBSProtocol *mp = <span class="hljs-literal">nullptr</span>;
+
+			<span class="hljs-comment">// 如果临时缓冲区为空指针，说明是每条指令的第一次读</span>
+			<span class="hljs-keyword">if</span> (!m_tempBuff)
+			{
+				buff = socket-&gt;read(<span class="hljs-keyword">sizeof</span>(MYBSProtocol));
+				buffLen = buff.size();
+				<span class="hljs-keyword">if</span>(buffLen == <span class="hljs-number">0</span>)
+					<span class="hljs-keyword">break</span>;
+				mp = (MYBSProtocol *)buff.data();
+
+				<span class="hljs-comment">// 防止上次内存申请失败读到抛弃的数据</span>
+				<span class="hljs-keyword">if</span> (mp-&gt;type &gt;= MAX)
+					<span class="hljs-keyword">return</span>;
+
+				<span class="hljs-comment">// 如果内存分配失败，直接关闭socket，这一次的数据全不要了</span>
+				m_tempBuff = (<span class="hljs-keyword">char</span> *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(mp) + mp-&gt;length);
+				<span class="hljs-keyword">if</span> (!m_tempBuff)
+				{
+					socket-&gt;close();
+					socket-&gt;waitForDisconnected(<span class="hljs-number">-1</span>);
+					m_surplus = <span class="hljs-number">0</span>;
+					<span class="hljs-keyword">return</span>;
+				}
+				<span class="hljs-built_in">memset</span>(m_tempBuff, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(mp) + mp-&gt;length);
+
+				<span class="hljs-built_in">memcpy</span>(m_tempBuff, buff.data(), buffLen);
+				m_cursor += buffLen;
+				m_surplus = mp-&gt;length;
+			}
+			<span class="hljs-keyword">else</span>
+			{
+				buff = socket-&gt;read(m_surplus &gt; m_maxRead ? m_maxRead : m_surplus);
+				buffLen = buff.size();
+
+				<span class="hljs-comment">// buffLen和m_surplus等于0是数据段长度为0的情况</span>
+				<span class="hljs-comment">// 防止数据段长度等于零时造成内存泄露</span>
+				<span class="hljs-keyword">if</span> (buffLen == <span class="hljs-number">0</span> &amp;&amp; m_surplus != <span class="hljs-number">0</span>)
+					<span class="hljs-keyword">break</span>;
+				<span class="hljs-built_in">memcpy</span>(m_tempBuff + m_cursor, buff.data(), buffLen);
+				m_cursor += buffLen;
+				m_surplus -= buffLen;
+
+				<span class="hljs-keyword">if</span> (m_surplus == <span class="hljs-number">0</span>)
+				{
+					mp = (MYBSProtocol *)m_tempBuff;
+
+					<span class="hljs-keyword">switch</span> (mp-&gt;type)
+					{
+					<span class="hljs-keyword">case</span> TEXT:
+					{
+						<span class="hljs-function">QByteArray <span class="hljs-title">ba</span><span class="hljs-params">(mp-&gt;data, mp-&gt;length)</span></span>;
+						QString text = QString::fromLocal8Bit(ba);
+						ui-&gt;browseArea-&gt;setText(text);
+					}<span class="hljs-keyword">break</span>;
+					<span class="hljs-keyword">case</span> PICTURE:
+					{
+						QPixmap imageresult;
+						<span class="hljs-function">QByteArray <span class="hljs-title">ba</span><span class="hljs-params">(mp-&gt;data, mp-&gt;length)</span></span>;
+						imageresult.loadFromData(ba);
+						ui-&gt;browseArea-&gt;setPixmap(imageresult);
+					}<span class="hljs-keyword">break</span>;
+					<span class="hljs-keyword">case</span> END:
+					{
+						socket-&gt;close();
+						socket-&gt;waitForDisconnected(<span class="hljs-number">-1</span>);
+					}<span class="hljs-keyword">break</span>;
+					<span class="hljs-keyword">default</span>:
+						<span class="hljs-keyword">break</span>;
+					}
+
+					<span class="hljs-comment">// 函数的最后判断一下是否完整处理过一个组包过程</span>
+					<span class="hljs-comment">// 如果处理过，释放内存</span>
+					<span class="hljs-keyword">if</span> (m_tempBuff)
+					{
+						<span class="hljs-built_in">free</span>(m_tempBuff);
+						m_tempBuff = <span class="hljs-literal">nullptr</span>;
+						m_cursor = <span class="hljs-number">0</span>;
+					}
+				}
+			}
+		}
+	}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MainWindow::onDisconnected</span><span class="hljs-params">()</span>
+</span>{
+	QTcpSocket *socket = <span class="hljs-keyword">dynamic_cast</span>&lt;QTcpSocket *&gt;(sender());
+	<span class="hljs-keyword">if</span> (socket)
+	{
+		QString ip = socket-&gt;peerAddress().toString();
+		quint16 port = socket-&gt;peerPort();
+		qDebug() &lt;&lt; <span class="hljs-string">"client disconnect:"</span> &lt;&lt; ip &lt;&lt; <span class="hljs-string">":"</span> &lt;&lt; port;
+		socket-&gt;deleteLater();
+	}
+}
+
+</div></code></pre>
+
+</body>
+</html>
