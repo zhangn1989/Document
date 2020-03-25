@@ -5,7 +5,7 @@ author: zhangn
 url: https://zhangn1989.github.io/Document/
 resume_site: https://zhangn1989.github.io/Document/me/
 github: https://github.com/zhangn1989
-baseurl: ""  #根目录
+baseurl: "https://zhangn1989.github.io/Document/"  #根目录
 #description: 假如生活欺骗了你，不要悲伤，不要哭泣。
 #motto: 我们笑着说再见，却深知再见遥遥无期。
 #motto: 如果生活欺骗了你，不要悲伤，不要哭泣。
