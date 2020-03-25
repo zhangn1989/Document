@@ -5,6 +5,9 @@ date: 2020-03-25 13:15:15 +0800
 categories: Qt
 tag: tcp
 ---
+* content
+{:toc}
+
 <h1><a id="_0"></a>基本使用</h1>
 <p>使用Qt的进行TCP通讯，主要用到两个类，QTcpServer和QTcpSocket。前者主要用于服务端的监听，相当于原始socket中由socket函数创建的监听socket；后者主要用于读写数据，相当于原始socket中由accept函数返回的连接socket。</p>
 <!-- more -->
