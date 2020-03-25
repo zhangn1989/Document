@@ -5,9 +5,9 @@ date: 2020-03-25 13:15:15 +0800
 categories: Qt
 tag: tcp
 ---
-## 使用Qt的进行TCP通讯，主要用到两个类，QTcpServer和QTcpSocket。前者主要用于服务端的监听，相当于原始socket中由socket函数创建的监听socket；后者主要用于读写数据，相当于原始socket中由accept函数返回的连接socket。 ##
 <h1><a id="_0"></a>基本使用</h1>
 <p>使用Qt的进行TCP通讯，主要用到两个类，QTcpServer和QTcpSocket。前者主要用于服务端的监听，相当于原始socket中由socket函数创建的监听socket；后者主要用于读写数据，相当于原始socket中由accept函数返回的连接socket。</p>
+<!-- more -->
 <h2><a id="_2"></a>服务端的大致使用流程如下：</h2>
 <ol>
 <li>创建QTcpServer对象，调用listen函数进行IP和端口号的监听，执行过该函数后，客户端就可以进行连接操作了，创建的服务器直接就是多连接多消息服务器，不需要我们去处理并发连接的问题。</li>
