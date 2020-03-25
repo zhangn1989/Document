@@ -1,5 +1,5 @@
 # Site settings
-name: zhangn的博客
+name: zhangn的博客1
 email: zhangnan6419@163.com
 author: zhangn
 url: https://zhangn1989.github.io
@@ -18,7 +18,7 @@ paginate_path: "page:num"
 plugins: [jekyll-paginate]
 gems: [jekyll-paginate]
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
-github_username: maoxiaoke
+github_username: zhangn1989
 highlighter: rouge
 markdown: kramdown
 FB:

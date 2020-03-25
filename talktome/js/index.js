@@ -57,8 +57,8 @@ var myBot = new BotUI('hello-world');
           return myBot.message.add ({
           delay: 1000,
           loading: true,
-          content: `Go ahead, try [my website](http://xiaokedada.com) or <a href="mailto:maoxiaoke@outlook.com">Email me.</a> </br>
-                    Here is my [Github address](https://github.com/maoxiaoke).`
+          content: `Go ahead, try [my website](http://zhangn1989.github.io) or <a href="mailto:zhangn1989@outlook.com">Email me.</a> </br>
+                    Here is my [Github address](https://github.com/zhangn1989).`
         });
         break;/*
         case 'your hobbies':
@@ -116,8 +116,8 @@ var myBot = new BotUI('hello-world');
                return myBot.message.add ({
                delay: 1000,
                loading: true,
-               content: `Go ahead, try [my website](http://xiaokedada.com) or <a href="mailto:maoxiaoke@outlook.com">Email me.</a> </br>
-                         Here is my [Github address](https://github.com/maoxiaoke).`
+               content: `Go ahead, try [my website](http://zhangn1989.github.io) or <a href="mailto:zhangn1989@outlook.com">Email me.</a> </br>
+                         Here is my [Github address](https://github.com/zhangn1989).`
              });
              break;/*
              case 'your hobbies':

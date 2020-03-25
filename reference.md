@@ -83,7 +83,7 @@ abbr {text-decoration: none;}
 </ol>
 <hr><h4 class="btn btn-primary btn-lg">博客</h4><hr>
 <ol class="rounded-list">
-<li><a href="http://xiaokedada.com/" target="_blank">小可嗒嗒的博客</a></li>
+<li><a href="http://zhangn1989.github.io/" target="_blank">zhangn的博客</a></li>
 <li><a href="http://ghmagical.com/" target="_blank">TG的博客</a></li>
 <li><a href="http://2ality.com/p/about.html" target="_blank">2ality</a></li>
 </ol>
