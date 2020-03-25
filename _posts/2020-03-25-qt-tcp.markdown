@@ -1,9 +1,11 @@
 ---
-layout: copy
-title: 联系我
+layout: post
+title: Qt的TCP通讯
 date: 2020-03-25 13:15:15 +0800
-permalink: /contact/
+categories: Qt
+tag: tcp
 ---
+## 使用Qt的进行TCP通讯，主要用到两个类，QTcpServer和QTcpSocket。前者主要用于服务端的监听，相当于原始socket中由socket函数创建的监听socket；后者主要用于读写数据，相当于原始socket中由accept函数返回的连接socket。 ##
 <h1><a id="_0"></a>基本使用</h1>
 <p>使用Qt的进行TCP通讯，主要用到两个类，QTcpServer和QTcpSocket。前者主要用于服务端的监听，相当于原始socket中由socket函数创建的监听socket；后者主要用于读写数据，相当于原始socket中由accept函数返回的连接socket。</p>
 <h2><a id="_2"></a>服务端的大致使用流程如下：</h2>
@@ -29,3 +31,18 @@ permalink: /contact/
 我们每次发送的数据长度是不确定的，而Qt又不管我们调用过几次write，也不管每次发送多少字节，都是无脑写入缓冲区，这样就可能回造成一个问题，如果每次发送的数据很小，接收端会一次接收到多次write的数据，如果发送的数据很大，接收端一次接收的数据又很可能不完整，需要接收几次才行，甚至还很可能在接收端的一次接收时会接收到两次不完整的数据，第一次的后半段和第二次的前半段。因此在接收端需要进行拆包封包的操作，自行拼凑我们想要的数据。</p>
 <h1><a id="_26"></a>具体例子</h1>
 <p>我们首先定义一个接收端和发送端共用的数据协议</p>
+<pre><code class="prism language-cpp"><span class="token keyword">enum</span> ProtocolType
+<span class="token punctuation">{</span>
+	TEXT <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+	PICTURE<span class="token punctuation">,</span>
+	END<span class="token punctuation">,</span>
+	MAX
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> MYBSProtocol
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> length<span class="token punctuation">;</span>
+	ProtocolType type<span class="token punctuation">;</span>
+	<span class="token keyword">char</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
