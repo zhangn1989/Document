@@ -18,7 +18,7 @@ tag: Python 爬虫
 
  1. 创建gayhub帐号，然后新建一个名为```用户名.github.io```的存储库，**注意，存储库的名称一定要是这个形式的，否则后期访问处理路径问题是很麻烦的**
  2. 向存储出中添加一个index.html或者README.md
- 3. 进入settings，往下拉，找到设置GitHub Pages的位置进行相关配置，不知道今天什么情况，我的gayhub一直上不去，具体设置先不说了，等能上去后再说，其实也不难，看一下就会了
+ 3. 进入settings，往下拉，找到设置GitHub Pages的位置，将Source中的None改成主分支
  4. 如果有自己的域名可以在设置GitHub Pages的位置进行域名绑定，然后就可以通过该域名进行访问了，如果没有自己的域名，则使用```用户名.github.io```进行访问
  5. 在浏览器中输入自己绑定的域名或```用户名.github.io```就会返回之前添加的index.html或者README.md的主页
  
