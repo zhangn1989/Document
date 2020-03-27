@@ -8,4 +8,4 @@ permalink: /contact/
 {{ site.email }}
 
 # github
-[]({{ site.github }})
+[https://github.com/zhangn1989]({{ site.github }})
