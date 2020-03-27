@@ -3,7 +3,7 @@ layout: post
 title: Jekyll + Github Pages + CSDN迁移脚本 = 自己的云笔记
 date: 发布于2020-03-27 11:49:30 +0800
 categories: 测试结果杂记
-tags: Python 爬虫 Jekyll Github 'Github Pages'
+tags: Python 爬虫 Jekyll Github GithubPages
 ---
 
 
