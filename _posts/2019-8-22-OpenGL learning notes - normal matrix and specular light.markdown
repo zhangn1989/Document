@@ -19,8 +19,7 @@ tag: 4
 
 首先，法线向量只有方向意义，没有位置意义，因此不能对法线进行位移操作。  
 其次，法线向量虽然不能位移，但可以跟随平面做旋转和缩放操作。如果是旋转，法线向量直接跟随旋转即可，但如果是缩放，等比例缩放还算简单，再标准化一次就行，非等比例缩放就麻烦了，因为非等比例缩放会导致向量的各个分量缩放比例不同，从而影响向量的方向，导致法向量不再垂直于平面。  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190830112649793.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - normal matrix and specular light_1.png)  
 为了解决这个问题，将法向量从局部空间向世界空间转换时需要专门的转换矩阵，我们称之为法线矩阵。
 
 ## 法线矩阵推导
@@ -60,8 +59,7 @@ S=(ST)T=(M−1)T S=(S^T)^T=(M^{-1})^T S=(ST)T=(M−1)T
 
 前面的章节中已经把光照强度和光照角度对颜色的影响计算进去了，但对比现实世界还少点东西。在现实世界中，如果我们用一面镜子去观察一盏灯，随着我们的移动，灯在镜子中的位置也会跟随移动，接下来我们就要把现实世界中的这个现象模拟到OpenGL中。由于这个现象和观察者有关系，所以需要计算观察向量和反射向量的角度差。  
 我们通过反射法向量周围光的方向来计算反射向量。然后我们计算反射向量和视线方向的角度差，如果夹角越小，那么镜面光的影响就会越大。它的作用效果就是，当我们去看光被物体所反射的那个方向的时候，我们会看到一个高光。  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190830114332279.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - normal matrix and specular light_2.png)  
 观察向量是镜面光照附加的一个变量，可以用观察者（摄像机）的世界空间位置与被观察者的世界空间位置做差求得。
 
 # 完整例子

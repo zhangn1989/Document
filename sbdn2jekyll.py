@@ -25,7 +25,6 @@ import html2text
 import urllib.request
 import urllib.parse
 import json
-from translate import Translator
 from bs4 import BeautifulSoup
 
 def translateChinese2English(chinese):
@@ -133,7 +132,7 @@ def html2Markdown(html):
         with open(image, 'wb') as f:
             f.write(r.content) 
         f.close()
-        text = text.replace(url, '/styles/images/blog/' + image)
+        mdText = mdText.replace(url, '/styles/images/blog/' + image)
         i = i + 1
 
     # 文档转换成，写入本地文件

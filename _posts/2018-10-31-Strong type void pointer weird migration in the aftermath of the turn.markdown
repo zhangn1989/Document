@@ -28,13 +28,11 @@ _指针进行函数传递，在EvoSdtpImsiMIExt再强转回EvoCallInfo_
 然后定位了问题产生的原因，问题出现在EvoCallInfo _evi = (EvoCallInfo _)arg;这一句上，将void_
 类型的arg指针强专成EvoCallInfo_类型的evi时，指针变量值发生诡异的位移，每次都向前位移了0x50个字节  
 下图是gdb调试信息，堆栈位于EvoSdtpImsiMIExt函数  
-![在这里插入图片描述](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWctYmJzLmNzZG4ubmV0L3VwbG9hZC8yMDE4MTAvMzEvMTU0MDk1MDk1Ml80MDkyOTIucG5n?x-oss-
-process=image/format,png)
+![在这里插入图片描述](/styles/images/blog/Strong type void pointer weird migration in the aftermath of the turn_1.png)
 
 在EvoSdtpFieldsGetBCD堆栈中，如果使用函数传进来的指针程序就挂掉，强行查看正确地址内存数据并没有问题  
 下图是gdb调试信息，堆栈位于EvoSdtpFieldsGetBCD函数  
-![在这里插入图片描述](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWctYmJzLmNzZG4ubmV0L3VwbG9hZC8yMDE4MTAvMzEvMTU0MDk1MTI4Nl84NzU1MS5wbmc?x-oss-
-process=image/format,png)
+![在这里插入图片描述](/styles/images/blog/Strong type void pointer weird migration in the aftermath of the turn_2.png)
 
 变量evi和eci有一个错误输入，大家忽略这个细节
 

@@ -38,16 +38,11 @@ objectColor=0.1\times(1.0,1.0,1.0)\times(1.0,0.5,0.31)=(0.1,0.05,0.031)\\\
 lightColor\times objectColor=(1.0,1.0,1.0)\times(1.0,0.5,0.31)=(1.0,0.5,0.31)
 ambientStrength×lightColor×objectColor=0.1×(1.0,1.0,1.0)×(1.0,0.5,0.31)=(0.1,0.05,0.031)lightColor×objectColor=(1.0,1.0,1.0)×(1.0,0.5,0.31)=(1.0,0.5,0.31)  
 可见，环境光照ambientStrength的作用就是调整将物体的反射光，由于这里给了一个很暗的光，所以物体反射的光线也变得很暗，我们再来调整一下ambientStrength的数值，对比一下，下面的几张图片依次是ambientStrength等于0.1，0.5，1，1.5，和10的效果  
-![01](https://img-blog.csdnimg.cn/20190829122140277.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
-![05](https://img-blog.csdnimg.cn/20190829122156741.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
-![10](https://img-blog.csdnimg.cn/20190829122218803.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
-![15](https://img-blog.csdnimg.cn/20190829122229151.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190829122239416.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![01](/styles/images/blog/OpenGL learning notes - based lighting_1.png)  
+![05](/styles/images/blog/OpenGL learning notes - based lighting_2.png)  
+![10](/styles/images/blog/OpenGL learning notes - based lighting_3.png)  
+![15](/styles/images/blog/OpenGL learning notes - based lighting_4.png)  
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - based lighting_5.png)  
 当ambientStrength等于0.1，0.5，1时，颜色是越来越亮的，直到等于1时最亮。那么如果继续增加亮度会怎么样？当ambientStrength等于1.5时，计算出来的最终颜色是(1.5,0.75,0.465)(1.5,0.75,0.465)(1.5,0.75,0.465)，结果的R值超过了1，这个颜色就等于(1.0,0.75,0.465)(1.0,0.75,0.465)(1.0,0.75,0.465)。大家可以自行将这个颜色值直接赋值给着色器的FragColor进行验证，这里就不演示了。接下来继续增加亮度，当ambientStrength等于10时，得到的颜色的RGB值都超过了1，所以结果就是白色，如上图所示。
 
 # 漫反射光照

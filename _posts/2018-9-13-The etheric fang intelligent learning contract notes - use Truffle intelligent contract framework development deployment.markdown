@@ -45,8 +45,7 @@ truffle是一个智能合约的开发框架，具体的就不介绍了，我们�
 
 该命令一定要在空目录下执行，否则会出错  
 命令执行完毕后会下载一些初始文件，这些文件不用动，目录结构如下  
-![初始化后的目录结构](https://img-
-blog.csdn.net/20180913111316394?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![初始化后的目录结构](/styles/images/blog/The etheric fang intelligent learning contract notes - use Truffle intelligent contract framework development deployment_1.png)
 
 # 编译合约
 

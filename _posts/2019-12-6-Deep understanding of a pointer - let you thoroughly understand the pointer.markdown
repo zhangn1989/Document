@@ -21,8 +21,7 @@ tag: 4
 # 内存的逻辑结构
 
 先看张图  
-![内存逻辑结构](https://img-blog.csdnimg.cn/20191206150821343.jpg?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![内存逻辑结构](/styles/images/blog/Deep understanding of a pointer - let you thoroughly understand the pointer_1.png)  
 在逻辑上，我们把内存分成一个一个的小格子，每个小格子就是一个字节，而每个字节又有8个位。同时为每个小格子编上编号，而这个编号就是我们常说的内存地址。我们常说的计算机有4G内存指的就是计算机有4x1024x1024x1024个存储单元。
 
 # 为什么32位系统只支持4G内存

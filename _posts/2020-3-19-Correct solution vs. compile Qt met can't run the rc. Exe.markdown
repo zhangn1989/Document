@@ -10,8 +10,7 @@ tag: 4
 
 <!-- more -->
 打开工程属性，看下面的截图  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200319115538676.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![在这里插入图片描述](/styles/images/blog/Correct solution vs. compile Qt met can't run the rc. Exe_1.png)  
 能正常编译的旧工程中的目标平台版本是8.1，而新建的工程默认选择10。很明显，这是sdk版本找的不对的问题，如果用那种瞎复制的办法，虽然能正常编译，但鬼知道会不会有什么隐患，到时候出问题找都找不到。
 
 * content

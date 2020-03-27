@@ -10,12 +10,10 @@ tag: 4
 
 <!-- more -->
 为了方便起见，我们先找一张Qt继承关系图  
-![常用Qt类图](https://img-blog.csdnimg.cn/20190808123426832.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![常用Qt类图](/styles/images/blog/Dig deep Qt signal channel (Windows)_1.png)  
 上图为网上找的，原图连接[在这里](https://www.processon.com/view/5758f23de4b080e40c7feaca)，侵删  
 然后，我们随便建个Qt工程，添加一个pushButton，并绑定clicked信号，将断点下在我们的槽函数上，调试程序，点击pushButton，程序会断在我们的槽函数，并得到从main函数开始的调用堆栈，我们逐层的观察  
-![堆栈调用图](https://img-blog.csdnimg.cn/2019080812380919.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![堆栈调用图](/styles/images/blog/Dig deep Qt signal channel (Windows)_2.png)  
 在堆栈的最底层是WinMain函数，没做过windows开发的小伙伴可能会对这个函数感到陌生，这个是windows应用程序的入口函数，我们来看一下这个函数
 
     

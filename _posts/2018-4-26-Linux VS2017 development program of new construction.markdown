@@ -10,13 +10,11 @@ tag: 4
 
 <!-- more -->
 
-![](https://img-
-blog.csdn.net/20180426144328162?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](/styles/images/blog/Linux VS2017 development program of new construction_1.png)
 
 新建程序比较简单，在文件>新建>项目中找到Visual C++>跨平台>Linux，在右侧选择相应的项目即可
 
-![](https://img-
-blog.csdn.net/20180426144744787?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](/styles/images/blog/Linux VS2017 development program of new construction_2.png)
 
 其中空项目就是一个空白的，一个文件都没有的工程，创建好以后自行添加文件
 
@@ -30,8 +28,7 @@ blog.csdn.net/20180426144744787?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21
 
 工程默认会在远程linux服务器的~/projects路径下创建一个工程目录，用来拷贝源代码，存放中间文件和目标文件，可以在工程属性界面进行修改，如下图
 
-![](https://img-
-blog.csdn.net/20180426150229772?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](/styles/images/blog/Linux VS2017 development program of new construction_3.png)
 
 以上是默认选项，可以根据自己的需要进行修改。如果不想在linux上复制源码，可以点击左侧的复制源，在复制源界面的复制源选项中把是改成否。
 

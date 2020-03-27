@@ -82,8 +82,7 @@ NDC)。也就是说，每个顶点的x，y，z坐标都应该在-1.0到1.0之间
 为了将坐标从一个坐标系变换到另一个坐标系，我们需要用到几个变换矩阵，最重要的几个分别是模型(Model)、观察(View)、投影(Projection)三个矩阵。我们的顶点坐标起始于局部空间(Local
 Space)，在这里它称为局部坐标(Local Coordinate)，它在之后会变为世界坐标(World Coordinate)，观察坐标(View
 Coordinate)，裁剪坐标(Clip Coordinate)，并最后以屏幕坐标(Screen Coordinate)的形式结束。  
-![坐标系转换](https://img-blog.csdnimg.cn/20190827191710575.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)
+![坐标系转换](/styles/images/blog/OpenGL learning notes - coordinate system_1.png)
 
 # 模型矩阵
 

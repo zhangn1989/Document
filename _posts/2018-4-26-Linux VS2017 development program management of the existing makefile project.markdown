@@ -34,18 +34,15 @@ unzip”进行编译。
 
 执行完上面两条命令，就会在工程目录下生成vs的工程文件，用vs打开这个工程，然后在打开工程是属性页面，点击常规，在右边找到远程生成根目录，修改为linux工程目录所在的目录，注意是工程目录所在的目录，而不是工程文件所在的目录，比如我将unzip.tar.gz放在了/home/user/work目录，解压后会在该目录下多出来一个unzip目录用来存放unzip的工程文件，我们这里要修改的目录是/home/user/work，而不是/home/user/work/unzip，这里一定要注意，如下图
 
-![](https://img-
-blog.csdn.net/20180426155744422?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](/styles/images/blog/Linux VS2017 development program management of the existing makefile project_1.png)
 
 然后单击远程生成选项，在右面配置程序的生成命令，清理命令，重新生成命令，如下图
 
-![](https://img-
-blog.csdn.net/20180426160106184?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](/styles/images/blog/Linux VS2017 development program management of the existing makefile project_2.png)
 
 最后，我们再配置一下调试选项，点击调试，在右边配置可执行程序的路径，运行参数，工作目录等，如下图所示
 
-![](https://img-
-blog.csdn.net/20180426160347420?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](/styles/images/blog/Linux VS2017 development program management of the existing makefile project_3.png)
 
 至此，所有的配置都完成了，以上所有配置内容都可以根据自己的习惯进行相应的修改，调试的时候如果涉及到终端的输入输出，可以在调试菜单中找到linux控制台，使用微软提供的那个简陋的模拟终端。
 

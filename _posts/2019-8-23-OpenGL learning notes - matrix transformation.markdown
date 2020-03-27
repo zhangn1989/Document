@@ -39,8 +39,7 @@ tag: 4
 我们先来尝试缩放向量v⃗=(3,2)\vec{v}
 =(3,2)v=(3,2)。我们可以把向量沿着x轴缩放0.5，使它的宽度缩小为原来的二分之一；我们将沿着y轴把向量的高度缩放为原来的两倍。我们看看把向量缩放(0.5,
 2)倍所获得的s⃗\vec{s}s是什么样的  
-![向量缩放](https://img-blog.csdnimg.cn/20190823192356228.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![向量缩放](/styles/images/blog/OpenGL learning notes - matrix transformation_1.png)  
 这是我们想要的结果，但我们怎么计算出这个结果呢？如果是这种简单的缩放，我们可以把v⃗\vec{v}v的x分量乘以0.5，y分量乘以2来得到这个结果。但这种方法不适合用在计算机的计算中，为了加快运算速度，简化计算，往往使用矩阵。因此我们需要用构建一个缩放矩阵来实现缩放功能  
 回顾刚才单位矩阵的计算，第一个结果元素是矩阵的第一行的每个元素乘以向量的每个对应元素。因为每行的元素除了第一个都是0，可得：1⋅1+0⋅2+0⋅3+0⋅4=11\cdot
 1+0\cdot 2+0\cdot 3+0\cdot 4=11⋅1+0⋅2+0⋅3+0⋅4=1，向量的其他3个元素同理。  
@@ -247,8 +246,7 @@ scalar)构造方式是用scale给四维向量的四个分量赋值，得到了�
 位移(Translation)是在原始向量的基础上加上另一个向量从而获得一个在不同位置的新向量的过程，从而在位移向量基础上移动了原始向量。我们已经讨论了向量加法，所以这应该不会太陌生。  
 我们先来尝试位移向量v⃗=(3,2)\vec{v}
 =(3,2)v=(3,2)。我们可以把向量沿着x轴向左平移1个单位，沿着y轴向右平移两个单位，下面是平移后所获得的s⃗\vec{s}s。  
-![向量位移](https://img-blog.csdnimg.cn/2019082612180934.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![向量位移](/styles/images/blog/OpenGL learning notes - matrix transformation_2.png)  
 我们可以通过将向量v⃗\vec{v}v的x分量减1，y分量加2得到结果向量s⃗\vec{s}s。和缩放矩阵类似，我们需要一个位移矩阵。如果我们把位移向量表示为(Tx,Ty,Tz)(T_x,T_y,T_z)(Tx​,Ty​,Tz​)，我们就能把位移矩阵定义为：  
 (100Tx010Ty001Tz0001)⋅(xyz1)=(x+Txy+Tyz+Tz1) \left( \begin{array}{ccc} 1&amp;
 0 &amp;0 &amp;T_x \\\ 0 &amp; 1&amp;0 &amp;T_y \\\ 0 &amp; 0 &amp;1&amp;T_z
@@ -332,8 +330,7 @@ T_z \end{array} \right)
 # 旋转
 
 旋转是非常麻烦的一个操作，让我们先来一个最简单的绕原点旋转的二维旋转矩阵，先看下图  
-![向量旋转](https://img-blog.csdnimg.cn/20190826165818757.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![向量旋转](/styles/images/blog/OpenGL learning notes - matrix transformation_3.png)  
 首先，我们需要复习一下两角和公式  
 sin⁡(α+β)=sin⁡α⋅cos⁡β+cos⁡α⋅sin⁡βcos⁡(α+β)=cos⁡α⋅cos⁡β−sin⁡α⋅sin⁡β
 \sin(\alpha+\beta)=\sin\alpha\cdot\cos\beta+\cos\alpha\cdot\sin\beta \\\
@@ -477,8 +474,7 @@ Trans⋅Scale=(2001020200230001)⋅(xyz1)=(2x+12y+22y+31) Trans\cdot Scale=\left
 \left( \begin{array}{ccc} 2x+1 \\\ 2y+2 \\\ 2y+3 \\\ 1 \end{array} \right)
 Trans⋅Scale=⎝⎜⎜⎛​2000​0200​0020​1231​⎠⎟⎟⎞​⋅⎝⎜⎜⎛​xyz1​⎠⎟⎟⎞​=⎝⎜⎜⎛​2x+12y+22y+31​⎠⎟⎟⎞​  
 一定要注意，先执行的操作要在乘法的右边，否则结果是错误的，我们看下图  
-![矩阵计算](https://img-blog.csdnimg.cn/20190826191428132.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![矩阵计算](/styles/images/blog/OpenGL learning notes - matrix transformation_4.png)  
 懒得手动去算了，我们找个矩阵计算器来算一下。上图中l1是缩放矩阵，m1是位移矩阵，m2是缩放在左位移在右，m3是位移在左，缩放在右。虽然先做的在右边有些反直觉，但由于矩阵乘法性质决定，先做的一定要放在右边，否则结果就是错误的，这是因为最右边的矩阵最先与待变换的向量相乘。  
 设位移矩阵为A，缩放矩阵为B，被操作向量为C，完整的计算过程为A⋅B⋅CA\cdot B\cdot
 CA⋅B⋅C，由于矩阵乘法满足结合律，所以有(A⋅B)⋅C=A⋅(B⋅C)(A\cdot B)\cdot C=A\cdot (B\cdot

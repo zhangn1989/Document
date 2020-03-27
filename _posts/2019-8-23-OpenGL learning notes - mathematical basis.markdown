@@ -58,16 +58,14 @@ tag: 4
 \left( \begin{array}{ccc} 5 \\\ 7 \\\ 9 \end{array} \right)
 ⎝⎛​123​⎠⎞​+⎝⎛​456​⎠⎞​=⎝⎛​1+42+53+6​⎠⎞​=⎝⎛​579​⎠⎞​  
 向量减法有个特性在OpenGL中会经常用到，我们看下图：  
-![向量减法](https://img-blog.csdnimg.cn/20190823164418975.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![向量减法](/styles/images/blog/OpenGL learning notes - mathematical basis_1.png)  
 上图是一个向量减法的计算，w⃗=u⃗−v⃗\vec{w}=
 \vec{u}-\vec{v}w=u−v，我们再将w⃗\vec{w}w平移至k⃗\vec{k}k，可以看到向量k⃗\vec{k}k的方向就是B点指向A点的方向，这个特性在OpenGL控制摄像机的朝向时候会用到。
 
 ### 向量长度
 
 向量长度又叫向量的模，用|v|表示，这个也没啥难度，用勾股定理就能算，看下下图就懂了  
-![勾股定理计算向量的长度](https://img-blog.csdnimg.cn/20190823165137672.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)
+![勾股定理计算向量的长度](/styles/images/blog/OpenGL learning notes - mathematical basis_2.png)
 
 ### 向量乘法
 
@@ -94,18 +92,15 @@ cosθ=v⃗⋅k⃗∣v⃗∣⋅∣k⃗∣=32∣v⃗∣⋅∣k⃗∣ cosθ =
 cosθ=∣v∣⋅∣k∣v⋅k​=∣v∣⋅∣k∣32​  
 好吧，v⃗\vec{v}v和k⃗\vec{k}k的模我就不算了，领会精神  
 公式推导如下图  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190829171534629.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190829171546962.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - mathematical basis_3.png)  
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - mathematical basis_4.png)
 
 #### 叉乘
 
 叉乘只在3D空间中有定义，它需要两个不平行向量作为输入，生成一个正交于两个输入向量的第三个向量。  
 在摄像机章节中，我们用到了一个glm::lookAt函数来设置摄像机，该函数有三个参数，分别是摄像机位置、摄像机观察的位置和上向量。而摄像机实际上还需要一个指向方向向量和一个右向量，其中，方向向量是用目标的位置向量和摄像机位置向量做差得到的，右向量就是用上向量和方向向量进行叉乘得到的。  
 下图是推导过程  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190829180539357.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - mathematical basis_5.png)  
 整理成矩阵格式就是  
 (AxAyAz)×(BxByBz)=(Ay⋅Bz−Az⋅ByAz⋅Bx−Ax⋅BzAx⋅By−Ay⋅Bx) \left(
 \begin{array}{ccc} A_x \\\ A_y \\\ A_z \end{array} \right) \times \left(
@@ -117,10 +112,8 @@ B_z\\\ A_x \cdot B_y-A_y \cdot B_x\\\ \end{array} \right)
 ## 向量标准化
 
 模长为1的向量通常成为标准向量，向量标准化就是求与该向量方向相同，模长为1的向量，即求向量方向上的标准向量，计算方法如下图，下图截取自同济版高数教材第七版下册  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190829165817751.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190829165828754.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - mathematical basis_6.png)  
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - mathematical basis_7.png)
 
 # 矩阵
 
@@ -182,10 +175,8 @@ process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9n
 从这个例子可以看出为什么矩阵相乘要求左侧列数等于右侧行数了，如果不相等则没法计算，也能看出为什么结果矩阵的行数等于左侧的行数，结果矩阵的列数等于右侧的列数了  
 这个计算方法很是蛋疼，幸运的是我们可以把这个计算过程交给电脑去做，下面是推导过程  
 设有两个线性变换  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190830135953722.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190830140003658.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - mathematical basis_8.png)  
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - mathematical basis_9.png)
 
 ## 矩阵与向量相乘
 
@@ -245,9 +236,8 @@ A∗=⎝⎜⎜⎜⎛​A11​A12​⋮A1n​​A12​A22​⋮A2n​​⋯⋯ �
 
 ### 逆矩阵
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190830152720466.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190830152834413.png)  
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - mathematical basis_10.png)  
+![在这里插入图片描述](/styles/images/blog/OpenGL learning notes - mathematical basis_11.png)  
 求逆矩阵的过程：首先将矩阵写成行列式，然后求行列式的所有代数余子式，再将所有的代数余子式组合成新的矩阵（注意行列变化），即求伴随矩阵，最后用行列式的倒数乘以伴随矩阵。
 
 # 应用

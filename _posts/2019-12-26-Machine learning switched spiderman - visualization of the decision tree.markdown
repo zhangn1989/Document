@@ -83,7 +83,6 @@ learn.org/stable/modules/tree.html)。另外还有一点要注意，新版本的
 
 # 查看决策树
 
-![决策树](https://img-blog.csdnimg.cn/20191226183902305.png?x-oss-
-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==,size_16,color_FFFFFF,t_70)  
+![决策树](/styles/images/blog/Machine learning switched spiderman - visualization of the decision tree_1.png)  
 决策树的策略简单说就是判断输入数据的某个特征是否满足某些条件，满足的走一个分支，不满足的走另一个分支，直到将路径走完，这里不做太详细的说明。
 

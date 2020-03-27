@@ -86,8 +86,7 @@ HttpProvider的IP不能是127.0.0.1，这里被坑惨了。
     
 
 最后用浏览器访问“[http://192.168.180.130:8000/”看结果。](http://192.168.180.130:8000/%E2%80%9D%E7%9C%8B%E7%BB%93%E6%9E%9C%E3%80%82)  
-![](https://img-
-blog.csdn.net/20180918170459122?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)  
+![](/styles/images/blog/The etheric fang intelligent learning contract notes - web interaction_1.png)  
 在Candidate中输入人名，点击votes进行投票，点击query查询结果，结果显示在Votes中。
 
 * content
