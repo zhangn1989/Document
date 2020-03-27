@@ -6,6 +6,9 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
+* content
+{:toc}
+
 如果不使用深度缓冲，创建的立方体的某些本应被遮挡住的面被绘制在了这个立方体其他面之上。OpenGL是一个三角形一个三角形地来绘制你的立方体的，所以即便之前那里有东西它也会覆盖之前的像素。因为这个原因，有些三角形会被绘制在其它三角形上面，虽然它们本不应该是被覆盖的。  
 
 <!-- more -->
@@ -414,8 +417,4 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     	return 0;
     }
     
-
-* content
-{:toc}
-
 

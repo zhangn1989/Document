@@ -6,6 +6,9 @@ categories: 以太坊智能合约
 tag: 4
 ---
 
+* content
+{:toc}
+
 没搞过web程序，花了几天研究一下，总算是搞懂了网页与以太坊节点的交互流程。  
 
 <!-- more -->
@@ -88,8 +91,4 @@ HttpProvider的IP不能是127.0.0.1，这里被坑惨了。
 最后用浏览器访问“[http://192.168.180.130:8000/”看结果。](http://192.168.180.130:8000/%E2%80%9D%E7%9C%8B%E7%BB%93%E6%9E%9C%E3%80%82)  
 ![](/styles/images/blog/The etheric fang intelligent learning contract notes - web interaction_1.png)  
 在Candidate中输入人名，点击votes进行投票，点击query查询结果，结果显示在Votes中。
-
-* content
-{:toc}
-
 

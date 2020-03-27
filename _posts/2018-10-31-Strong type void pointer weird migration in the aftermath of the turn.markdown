@@ -6,6 +6,9 @@ categories: 测试结果杂记
 tag: 4
 ---
 
+* content
+{:toc}
+
 先上代码，操作系统centos6.5，gcc版本4.4.7 20120313，纯C代码
 
 <!-- more -->
@@ -48,8 +51,4 @@ _指针进行函数传递，在EvoSdtpImsiMIExt再强转回EvoCallInfo_
     
 
 一直想不通为什么会产生这个bug，指针在进行强转的时候还会发生偏移？大家有没有遇到过类似的问题？请大家帮忙分析一下问题产生的原因
-
-* content
-{:toc}
-
 

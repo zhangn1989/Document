@@ -6,6 +6,9 @@ categories: 一步步打造高并发服务器
 tag: 4
 ---
 
+* content
+{:toc}
+
 该模型是在单一迭代模型的基础上的改进，父进程只在一个死循环里进行accept，当一个客户端接入时，父进程会fork一个子进程，然后父进程关闭该连接的socket，并继续accept，等待下一个客户端接入，子进程可以关闭监听socket，然后去处理客户端请求，处理结束后关闭连接socket，结束自身进程，完整代码[戳这里](https://github.com/zhangn1989/MyRPC)​​​​​​​
 
 <!-- more -->
@@ -144,8 +147,4 @@ tag: 4
     	exit(EXIT_SUCCESS);
     }
     
-
-* content
-{:toc}
-
 

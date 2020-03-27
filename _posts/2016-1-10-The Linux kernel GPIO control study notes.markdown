@@ -6,14 +6,13 @@ categories: Linux内核学习笔记
 tag: 4
 ---
 
-
 * content
 {:toc}
 
 
     /********************************
-<!-- more -->
 
+<!-- more -->
      * GPIO驱动程序控制GPIO接口高低电平
      * 四个GPIO识别为四个设备
      * 创建四个文件分别控制四个GPIO

@@ -6,6 +6,9 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
+* content
+{:toc}
+
 将光源向量和物体颜色向量做分量相乘，得到的就光源照射在物体上所反射的颜色向量  
 
 <!-- more -->
@@ -491,8 +494,4 @@ f(x)=axlim⁡x→0f(x)=0lim⁡x→1f(x)=a f(x)=ax\\\ \lim_{x \rightarrow 0} f(x)
     }
     
     
-
-* content
-{:toc}
-
 

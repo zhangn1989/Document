@@ -6,6 +6,9 @@ categories: 测试结果杂记
 tag: 4
 ---
 
+* content
+{:toc}
+
 朋友，你的代码里需要处理zip文件吗？你是不是也觉得直接调用unzip命令效率非常低吗？那还等什么？赶快拿起键盘，按下复制粘贴键搬运吧！！！
 
 <!-- more -->
@@ -1091,8 +1094,4 @@ http://lib.yoekey.com/?p=236
     	return r;
     }
     #endif
-
-* content
-{:toc}
-
 

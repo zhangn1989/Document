@@ -6,15 +6,14 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
-# 坐标系转换
-
 * content
 {:toc}
 
+# 坐标系转换
 
 在开始这一节内容之前，我们先研究一下如何通过矩阵乘法实现坐标系转换  
-<!-- more -->
 
+<!-- more -->
 在XYZ坐标系中，有一个向量v⃗=(xyz)\vec{v}=\left( \begin{array}{ccc}x \\\y \\\z \end{array}
 \right)v=⎝⎛​xyz​⎠⎞​，我们可以改写成下面两种形式：  
 v⃗=(x00)+(0y0)+(00z)⇓v⃗=x⋅(100)+y⋅(010)+z⋅(001) \vec{v}=\left(

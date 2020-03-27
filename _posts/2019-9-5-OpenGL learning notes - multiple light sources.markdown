@@ -6,6 +6,9 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
+* content
+{:toc}
+
 这一节没有新东西，都是对之前光源进行一个综合应用，着色器代码中增加的函数和数组的使用方法
 
 <!-- more -->
@@ -783,8 +786,4 @@ tag: 4
     
     
     
-
-* content
-{:toc}
-
 

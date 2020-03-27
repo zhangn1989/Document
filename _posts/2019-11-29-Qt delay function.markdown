@@ -6,15 +6,14 @@ categories: Qt
 tag: 4
 ---
 
-# 阻塞延时
-
 * content
 {:toc}
 
+# 阻塞延时
 
 使用QThread类的msleep、sleep、usleep函数  
-<!-- more -->
 
+<!-- more -->
 优点：
 
   * 使用简单，都是静态函数，引入头文件后可以直接调用

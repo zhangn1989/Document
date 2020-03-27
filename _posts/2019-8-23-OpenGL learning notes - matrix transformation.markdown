@@ -6,15 +6,14 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
-### 文章目录
-
 * content
 {:toc}
 
+### 文章目录
 
   * 缩放
-<!-- more -->
 
+<!-- more -->
     * glm矩阵表示
     * glm缩放矩阵实现
   * 位移

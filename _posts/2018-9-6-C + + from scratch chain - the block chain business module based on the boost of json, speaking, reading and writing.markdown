@@ -6,14 +6,13 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
-
 * content
 {:toc}
 
 
     #include <boost/property_tree/ptree.hpp>
-<!-- more -->
 
+<!-- more -->
     #include <boost/property_tree/json_parser.hpp>
     
     std::string BlockChain::GetJsonFromBlock(Block &block)

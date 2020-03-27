@@ -6,6 +6,9 @@ categories: Linux内核学习笔记
 tag: 4
 ---
 
+* content
+{:toc}
+
   
 
 <!-- more -->
@@ -130,8 +133,4 @@ echo 任意字符串 >/proc/abc_pro(需root权限)
     module_exit(my_exit);
     MODULE_LICENSE("GPL");
     MODULE_AUTHOR("ZhangN");
-
-* content
-{:toc}
-
 

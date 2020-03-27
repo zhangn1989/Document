@@ -6,6 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
+* content
+{:toc}
+
 本系列博文对理论性的东西叙述的不多，主要是以代码为主，本例是模仿比特币实现的一个电子货币记账系统。  
 
 <!-- more -->
@@ -280,8 +283,4 @@ tag: 4
 # 完整代码
 
 完整代码[戳这里](https://github.com/zhangn1989/shacoin)。
-
-* content
-{:toc}
-
 

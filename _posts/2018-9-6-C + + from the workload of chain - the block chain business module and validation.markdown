@@ -6,6 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
+* content
+{:toc}
+
 原则上说，工作量证明算法应该是计算困难，验证容易，但我们这里只为学习，一切从简，使用一个简单的工作量证明算法：先取一个字符串，如“Hello
 
 <!-- more -->
@@ -40,8 +43,4 @@ Shacoin!”，然后取一个自然整数，再将该整数转成字符串，衔
         std::string strHash = Cryptography::GetHash(str.c_str(), str.length());
         return (strHash.back() == '0');
     }
-
-* content
-{:toc}
-
 

@@ -6,6 +6,9 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
+* content
+{:toc}
+
 加载模型需要使用Assimp来屏蔽掉不同工具的模型文件，[Assimp的gayhub](https://github.com/assimp/assimp.git)  
 
 <!-- more -->
@@ -564,8 +567,4 @@ tag: 4
     
     
     
-
-* content
-{:toc}
-
 

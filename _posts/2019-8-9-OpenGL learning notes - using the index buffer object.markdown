@@ -6,14 +6,13 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
-
 * content
 {:toc}
 
 
     #include <glad/glad.h>
-<!-- more -->
 
+<!-- more -->
     #include <GLFW/glfw3.h>
     
     #include <iostream>

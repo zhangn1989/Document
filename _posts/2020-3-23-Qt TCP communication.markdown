@@ -6,15 +6,14 @@ categories: Qt
 tag: 4
 ---
 
-# 基本使用
-
 * content
 {:toc}
 
+# 基本使用
 
 使用Qt的进行TCP通讯，主要用到两个类，QTcpServer和QTcpSocket。前者主要用于服务端的监听，相当于原始socket中由socket函数创建的监听socket；后者主要用于读写数据，相当于原始socket中由accept函数返回的连接socket。
-<!-- more -->
 
+<!-- more -->
 
 ## 服务端的大致使用流程如下：
 

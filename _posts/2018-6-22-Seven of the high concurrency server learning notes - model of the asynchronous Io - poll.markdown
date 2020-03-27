@@ -6,6 +6,9 @@ categories: 一步步打造高并发服务器
 tag: 4
 ---
 
+* content
+{:toc}
+
 poll模型和select模型很相似。两者间的主要区别在于我们要如何指定待检查的文件描述符。在select中，我们提供三个集合，在每个集合中标明我们感兴趣的文件描述符。而在poll中我们提供一列文件描述符，并在每个文件描述符上标明我们感兴趣的事件，完整代码[戳这里](https://github.com/zhangn1989/MyRPC)​​​​​​​，用到的系统调用如下
 
 <!-- more -->
@@ -187,8 +190,4 @@ pollfd，下次返回时，把revents设置为0。
     	exit(EXIT_SUCCESS);
     }
     
-
-* content
-{:toc}
-
 

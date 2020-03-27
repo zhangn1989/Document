@@ -6,14 +6,13 @@ categories: Qt
 tag: 4
 ---
 
-
 * content
 {:toc}
 
 
     QDir dir("dir");
-<!-- more -->
 
+<!-- more -->
     if (!dir.exists())
     	return a.exec();
     

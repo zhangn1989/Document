@@ -6,6 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
+* content
+{:toc}
+
 原则上说，打洞服务器应该是可以返回多个节点的，这里为了简化，只返回一个节点。
 
 <!-- more -->
@@ -135,8 +138,4 @@ tag: 4
         return 0;
     }
     
-
-* content
-{:toc}
-
 

@@ -6,15 +6,14 @@ categories: 机器学习调包侠
 tag: 4
 ---
 
-# 本篇对应教程
-
 * content
 {:toc}
 
+# 本篇对应教程
 
 [油管原版](https://www.youtube.com/watch?v=AoeEHqVSNOw)，[B站搬运](https://www.bilibili.com/video/av7325584)
-<!-- more -->
 
+<!-- more -->
 
 # k最近邻算法
 

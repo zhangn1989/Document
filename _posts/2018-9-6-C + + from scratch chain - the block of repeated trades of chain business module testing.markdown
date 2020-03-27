@@ -6,6 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
+* content
+{:toc}
+
 想象这样一个场景：  
 
 <!-- more -->
@@ -40,8 +43,4 @@ tag: 4
         }
         pthread_mutex_unlock(&m_mutexTs);
     }
-
-* content
-{:toc}
-
 

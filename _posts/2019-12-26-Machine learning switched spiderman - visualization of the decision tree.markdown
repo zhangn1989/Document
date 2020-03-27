@@ -6,15 +6,14 @@ categories: 机器学习调包侠
 tag: 4
 ---
 
-# 本篇对应教程
-
 * content
 {:toc}
 
+# 本篇对应教程
 
 [油管原版](https://www.youtube.com/watch?v=tNa99PG8hR8)，[B站搬运](https://www.bilibili.com/video/av7214214)
-<!-- more -->
 
+<!-- more -->
 
 # 测试数据
 

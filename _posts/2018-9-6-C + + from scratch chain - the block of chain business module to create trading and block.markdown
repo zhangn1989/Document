@@ -6,6 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
+* content
+{:toc}
+
 创建交易简单，直接给结构体赋值就行
 
 <!-- more -->
@@ -45,8 +48,4 @@ tag: 4
     
         return block;
     }
-
-* content
-{:toc}
-
 

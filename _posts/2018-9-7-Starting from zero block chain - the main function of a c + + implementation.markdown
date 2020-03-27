@@ -6,6 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
+* content
+{:toc}
+
 前面已经把各种业务逻辑都写好了，main函数怎么调用就随便了，这里只是其中一种实现方法
 
 <!-- more -->
@@ -137,8 +140,4 @@ tag: 4
     
         return 0;
     }
-
-* content
-{:toc}
-
 

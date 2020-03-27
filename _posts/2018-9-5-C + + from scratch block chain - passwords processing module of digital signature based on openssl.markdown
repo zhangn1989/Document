@@ -6,6 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
+* content
+{:toc}
+
 关于数字签名的原理请自行百度，我们这里使用椭圆曲线加密算法来进行签名，下面上代码
 
 <!-- more -->
@@ -146,8 +149,4 @@ tag: 4
         EC_KEY_free(ec_key);
         return ret;
     }
-
-* content
-{:toc}
-
 

@@ -6,6 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
+* content
+{:toc}
+
 udp的特点是不可靠，不连接，数据发过去就完事，至于对方收没收到就不管了。  
 
 <!-- more -->
@@ -179,8 +182,4 @@ udp的特点是不可靠，不连接，数据发过去就完事，至于对方�
             m_lstPackage.remove(package);
         }
     }
-
-* content
-{:toc}
-
 

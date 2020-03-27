@@ -6,6 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
+* content
+{:toc}
+
 这个没啥可说的，直接上代码
 
 <!-- more -->
@@ -25,8 +28,4 @@ tag: 4
     
         return ss.str();
     }
-
-* content
-{:toc}
-
 

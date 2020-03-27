@@ -6,6 +6,9 @@ categories: Qt
 tag: 4
 ---
 
+* content
+{:toc}
+
 对于源控件，需要重写鼠标按下事件和鼠标移动事件
 
 <!-- more -->
@@ -87,8 +90,4 @@ tag: 4
     	TweenMould tween = var.value<TweenMould>();
     }
     
-
-* content
-{:toc}
-
 

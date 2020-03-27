@@ -6,6 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
+* content
+{:toc}
+
 比特币中的余额检查实现起来好麻烦，严格来说比特币中并没有所谓的余额，具体请读者自行百度比特币相关的资料。  
 
 <!-- more -->
@@ -35,8 +38,4 @@ tag: 4
     
         return balan;
     }
-
-* content
-{:toc}
-
 

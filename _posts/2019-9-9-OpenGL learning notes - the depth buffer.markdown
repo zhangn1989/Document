@@ -6,6 +6,9 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
+* content
+{:toc}
+
 之前为了方便理解，代码尽量不封装。这节以后，凡是涉及到新东西的尽量不去封装，而不涉及新东西的，为了代码的简洁，尽量去封装了
 
 <!-- more -->
@@ -419,8 +422,4 @@ Fdepth​=1/far−1/near1/z−1/near​
     	return textureID;
     }
     
-
-* content
-{:toc}
-
 

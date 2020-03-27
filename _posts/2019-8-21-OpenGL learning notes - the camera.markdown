@@ -6,6 +6,9 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
+* content
+{:toc}
+
 OpenGL本身没有摄像机(Camera)的概念，但我们可以通过把场景中的所有物体往相反方向移动的方式来模拟出摄像机，产生一种我们在移动的感觉，而不是场景在移动。
 
 <!-- more -->
@@ -735,8 +738,4 @@ At函数中必然会有一个将矩阵转置的过程，我们来看一下Look A
     	return 0;
     }
     
-
-* content
-{:toc}
-
 

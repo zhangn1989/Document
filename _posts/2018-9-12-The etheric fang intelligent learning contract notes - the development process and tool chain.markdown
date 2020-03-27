@@ -6,6 +6,9 @@ categories: 以太坊智能合约
 tag: 4
 ---
 
+* content
+{:toc}
+
 本文主要介绍开发流程和工具链的使用，安装过程百度上有好多，这里就不赘述了  
 
 <!-- more -->
@@ -266,8 +269,4 @@ web3.eth.accounts[1]”
     eth.getBalance(eth.accounts[1])
 
 发现余额有少了几个wei，投票需要向网络上写数据，所以要消耗以太币，而查询不用写数据，就不用消耗以太币了。
-
-* content
-{:toc}
-
 

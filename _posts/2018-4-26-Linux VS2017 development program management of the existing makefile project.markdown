@@ -6,6 +6,9 @@ categories: VS2017开发Linux程序
 tag: 4
 ---
 
+* content
+{:toc}
+
 上一篇简单介绍了vs2017新建一个linux的工程，本编将介绍一下如何管理已有的makefile工程，如果你想了解新建工程该如何操作，请点击下面的连接：
 
 <!-- more -->
@@ -55,8 +58,4 @@ for-linux-development/
 
 用了一段时间，发现启动编译和启动调试都非常慢是Visual Assist X的锅，把插件禁掉就很快了。但对于用习惯Visual Assist
 X插件的用户来说，把它禁掉也是一件十分蛋疼的事，所以就看个人的取舍了。
-
-* content
-{:toc}
-
 

@@ -6,6 +6,9 @@ categories: Qt
 tag: 4
 ---
 
+* content
+{:toc}
+
 用Qt做操作堆栈主要用到这么几个类QUndoCommand、QUndoStack、QUndoGroup和QUndoView，下面详细介绍
 
 <!-- more -->
@@ -73,8 +76,4 @@ tag: 4
 # QUndoView
 
 该类用于显示执行的堆栈，这个用法很简单，new出来直接show就行了，通常在调试中使用。如果想要显示操作堆栈的内容，需要在SubCommand的构造函数中使用setText方法来设置每个SubCommand在QUndoView中的描述字符串
-
-* content
-{:toc}
-
 

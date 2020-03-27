@@ -6,6 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
+* content
+{:toc}
+
 搞了台阿里云做内网打洞测试，宏开关ALITEST用来内外网测试转换  
 
 <!-- more -->
@@ -71,8 +74,4 @@ tag: 4
         } __attribute__((packed))
             NodeInfo;
     }
-
-* content
-{:toc}
-
 

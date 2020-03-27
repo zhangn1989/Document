@@ -6,6 +6,9 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
+* content
+{:toc}
+
 学习课程链接：<https://learnopengl-cn.github.io>
 
 <!-- more -->
@@ -96,8 +99,4 @@ GLAD现在应该提供给你了一个zip压缩文件，包含两个头文件目�
     	return 0;
     }
     
-
-* content
-{:toc}
-
 

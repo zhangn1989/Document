@@ -80,6 +80,8 @@ def html2Markdown(html):
     mdText += "tag: " + tag + "\n"
     mdText += "---\n\n"
 
+    mdText += "* content\n{:toc}\n\n"
+
     # 将html转换为Markdown格式的文本
     body = html2text.html2text(text)
     # 找出正文的第一段
@@ -97,12 +99,9 @@ def html2Markdown(html):
     content = lst[i]
 
     # 找到正文的第一段的开始和结束的位置
-    index = body.index(content)
-    pos = index + len(content) + 1
+    pos = body.index(content) + len(content) + 1
     body = list(body)
 
-    # 取正文的第一段做摘要
-    body.insert(index - 1, '\n* content\n{:toc}\n\n')
     # 在正文的第一段后面添加摘要分割信息
     body.insert(pos, '\n<!-- more -->\n')
 
@@ -144,7 +143,7 @@ def getSbdnPosts():
     i = 1
     while 1:
         # 每个用户都有这么一个url做为文章列表，后面的数字就是列表分页后的页号
-        url = 'https://blog.sbdn.net/mumufan05/article/list/' + str(i)
+        url = 'https://blog.csdn.net/mumufan05/article/list/' + str(i)
         strhtml = requests.get(url)
         soup=BeautifulSoup(strhtml.text,'lxml')
         # 如果页号超出范围（比如只有3页但访问到第4页）返回的页面回包含下面这个信息，如果返回的页面有这个信息说明所有页面遍历完成，可以退出了

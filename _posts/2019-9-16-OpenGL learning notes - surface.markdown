@@ -6,6 +6,9 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
+* content
+{:toc}
+
 本节的内容是在定义顶点的时候确定三角形顶点的顺序，然后根据顺序确定物体的正面和背面，在渲染的时候就可以删除被挡住的一面从而提高绘图效率  
 
 <!-- more -->
@@ -391,8 +394,4 @@ tag: 4
     	return textureID;
     }
     
-
-* content
-{:toc}
-
 

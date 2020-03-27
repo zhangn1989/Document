@@ -6,6 +6,9 @@ categories: 一步步打造高并发服务器
 tag: 4
 ---
 
+* content
+{:toc}
+
 采用 PreForking 模型可以对子进程的数量进行了限制。PreForking 是通过预先产生多个子进程，共同对服务器套接字进行竞争性的
 
 <!-- more -->
@@ -149,8 +152,4 @@ accept，当一个连接到来时，每个子进程都有机会拿到这个连�
     	exit(EXIT_SUCCESS);
     }
     
-
-* content
-{:toc}
-
 

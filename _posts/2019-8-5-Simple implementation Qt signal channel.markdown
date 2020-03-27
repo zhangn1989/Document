@@ -6,14 +6,13 @@ categories: Qt
 tag: 4
 ---
 
-
 * content
 {:toc}
 
 
     #include <stdio.h>
-<!-- more -->
 
+<!-- more -->
     #include <string.h>
     #include <vector>
     #include <map>

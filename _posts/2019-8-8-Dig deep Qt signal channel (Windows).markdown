@@ -6,6 +6,9 @@ categories: Qt
 tag: 4
 ---
 
+* content
+{:toc}
+
 在上一篇[简单实现Qt的信号槽](https://blog.csdn.net/mumufan05/article/details/98499694)中，我们简单模拟了Qt的信号槽，从信号发出到槽函数调用我们已经基本了解了，但一些Qt自带的信号是怎么发射出来的呢？今天我们就来深扒一下。  
 
 <!-- more -->
@@ -329,8 +332,4 @@ windows消息循环的问题我们到此为止，接下来我们继续分析push
 这里有一句emit
 q->clicked(checked);，就是我们此行的目标了，在这里就调用了QPushButton的clicked信号。再往下走看clicked的实现，发现没有源码，该函数实现在moc_qabstractbutton.cpp中，这就来到了moc生成的代码中了，再继续往下走就和之前我们分析Qt信号槽的路径一样了，详见[简单实现Qt的信号槽](https://blog.csdn.net/mumufan05/article/details/98499694)  
 至此，我们的旅程圆满结束，由于本人目前的工作主要是在windows平台上，因此本次只分析了windows平台的实现，等以后有时间再来分析linux平台的实现。
-
-* content
-{:toc}
-
 
