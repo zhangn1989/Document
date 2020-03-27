@@ -6,12 +6,9 @@ categories: 测试结果杂记
 tag: 4
 ---
 
-* content
-{:toc}
-
 神马情况？？截图居然都不见了，算了，懒得补了。
-<!-- more -->
 
+<!-- more -->
 
 MinGW是什么我这里就不介绍了，百度上好多。
 
@@ -171,4 +168,8 @@ OK，编译通过，在同目录下生成了a.exe，我们运行下试试
 另外需要说明的是，Makefile也是可以用的，写法和Linux的完全一样，不同的是执行的命令不是make，而是mingw32-make。
 
 当然，你也可以把MinGW\bin目录下的mingw32-make.exe文件重命名为make.exe，就可以使用make命令去执行Makefile了
+
+* content
+{:toc}
+
 

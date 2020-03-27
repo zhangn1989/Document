@@ -6,12 +6,9 @@ categories: Linux内核学习笔记
 tag: 4
 ---
 
-* content
-{:toc}
-
 驱动程序：
-<!-- more -->
 
+<!-- more -->
 
     
     
@@ -217,4 +214,8 @@ tag: 4
     	exit(0);
     
     }
+
+* content
+{:toc}
+
 

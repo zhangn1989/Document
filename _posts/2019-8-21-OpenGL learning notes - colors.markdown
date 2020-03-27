@@ -6,12 +6,9 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
-* content
-{:toc}
-
 将光源向量和物体颜色向量做分量相乘，得到的就光源照射在物体上所反射的颜色向量  
-<!-- more -->
 
+<!-- more -->
 在OpenGL中，RGB的取值范围是0到1，当x和任意数做乘法时，x趋近于0，结果就趋近于0，x趋近于1，结果就趋近于这个数，用数学语言描述就是  
 f(x)=axlim⁡x→0f(x)=0lim⁡x→1f(x)=a f(x)=ax\\\ \lim_{x \rightarrow 0} f(x)=0\\\
 \lim_{x \rightarrow 1} f(x)=a\\\ f(x)=axx→0lim​f(x)=0x→1lim​f(x)=a  
@@ -494,4 +491,8 @@ f(x)=axlim⁡x→0f(x)=0lim⁡x→1f(x)=a f(x)=ax\\\ \lim_{x \rightarrow 0} f(x)
     }
     
     
+
+* content
+{:toc}
+
 

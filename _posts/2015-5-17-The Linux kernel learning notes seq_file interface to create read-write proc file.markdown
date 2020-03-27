@@ -6,12 +6,9 @@ categories: Linux内核学习笔记
 tag: 4
 ---
 
-* content
-{:toc}
-
   
-<!-- more -->
 
+<!-- more -->
 学习笔记与个人理解，如有错误，欢迎指正。
 
 温馨提示：建议跟着注释中的编号顺序阅读代码
@@ -133,4 +130,8 @@ echo 任意字符串 >/proc/abc_pro(需root权限)
     module_exit(my_exit);
     MODULE_LICENSE("GPL");
     MODULE_AUTHOR("ZhangN");
+
+* content
+{:toc}
+
 

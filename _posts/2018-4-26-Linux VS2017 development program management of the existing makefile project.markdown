@@ -6,12 +6,9 @@ categories: VS2017开发Linux程序
 tag: 4
 ---
 
-* content
-{:toc}
-
 上一篇简单介绍了vs2017新建一个linux的工程，本编将介绍一下如何管理已有的makefile工程，如果你想了解新建工程该如何操作，请点击下面的连接：
-<!-- more -->
 
+<!-- more -->
 
 https://blog.csdn.net/mumufan05/article/details/80093732
 
@@ -54,11 +51,15 @@ blog.csdn.net/20180426160347420?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21
 
 用了两天，感觉这次vs2017提供的linux程序开发，完全符合微软东西的特点：好用吗？好用，真TM好用，功能很强大，用的爽吗？不爽，非常的不爽，因为超级卡。每次启动编译和启动调试的时候都非常的慢，不过这个慢也是可以理解的，毕竟编译和调试都是在远程linux上进行的。不过这次的2017可以模块安装，完全可以根据自己的需要进行定制，倒是没有以前版本那么臃肿了。
 
-更多内容详见微软的官方云笔记文章https://blogs.msdn.microsoft.com/vcblog/2016/03/30/visual-c-
+更多内容详见微软的官方博客文章https://blogs.msdn.microsoft.com/vcblog/2016/03/30/visual-c-
 for-linux-development/
 
 =====================================================================
 
 用了一段时间，发现启动编译和启动调试都非常慢是Visual Assist X的锅，把插件禁掉就很快了。但对于用习惯Visual Assist
 X插件的用户来说，把它禁掉也是一件十分蛋疼的事，所以就看个人的取舍了。
+
+* content
+{:toc}
+
 

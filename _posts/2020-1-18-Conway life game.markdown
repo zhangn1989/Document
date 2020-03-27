@@ -6,12 +6,9 @@ categories: 测试结果杂记
 tag: 4
 ---
 
-* content
-{:toc}
-
 简介看[这里](https://zh.wikipedia.org/wiki/%E5%BA%B7%E5%A8%81%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F)  
-<!-- more -->
 
+<!-- more -->
 为保证通用性，逻辑层使用C语言的标准库去做
 
     
@@ -338,4 +335,8 @@ tag: 4
     
     
     
+
+* content
+{:toc}
+
 

@@ -6,12 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
-* content
-{:toc}
-
 想象这样一个场景：  
-<!-- more -->
 
+<!-- more -->
 节点a广播了一条消息，节点b和节点c都收到并记录在自己的交易列表中了。  
 然后节点b和节点c挖矿。  
 当节点b挖矿成功，将a的交易打包到区块中，并在网络上广播。  
@@ -43,4 +40,8 @@ tag: 4
         }
         pthread_mutex_unlock(&m_mutexTs);
     }
+
+* content
+{:toc}
+
 

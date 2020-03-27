@@ -6,12 +6,9 @@ categories: Qt
 tag: 4
 ---
 
-* content
-{:toc}
-
 我们在写Qt多线程的时候，都会直接重写QThread类的run方法，其实这种方式是Qt的设计者所反对的，它违背了QThread类的设计初衷，QThread的设计者曾发帖说过这个问题，原文找不到了，我们今天来看一下如何在不重写run方法的情况下使用QThread
-<!-- more -->
 
+<!-- more -->
 
 首先是控制类实现
 
@@ -186,4 +183,8 @@ tag: 4
     }
     
     
+
+* content
+{:toc}
+
 

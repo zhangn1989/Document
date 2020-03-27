@@ -6,10 +6,11 @@ categories: Qt
 tag: 4
 ---
 
+# 阻塞延时
+
 * content
 {:toc}
 
-# 阻塞延时
 
 使用QThread类的msleep、sleep、usleep函数  
 <!-- more -->

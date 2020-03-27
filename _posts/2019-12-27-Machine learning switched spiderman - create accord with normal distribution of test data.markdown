@@ -6,10 +6,11 @@ categories: 机器学习调包侠
 tag: 4
 ---
 
+# 本篇对应教程
+
 * content
 {:toc}
 
-# 本篇对应教程
 
 [油管原版](https://www.youtube.com/watch?v=N9fDIAflCMY)，[B站搬运](https://www.bilibili.com/video/av7253344)。原版教程其实是介绍特征的好坏的，但是我觉得这个看一遍就懂了，没什么值得做笔记的，倒是视频中创建正态分布测试数据的例子值得记录一下
 <!-- more -->

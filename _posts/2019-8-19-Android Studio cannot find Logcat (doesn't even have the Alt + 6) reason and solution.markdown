@@ -6,11 +6,12 @@ categories: 测试结果杂记
 tag: 4
 ---
 
+Android Studio并没有将指定的目录识别成安卓工程，sync一下就好了  
+
+<!-- more -->
+file->sync project with gradle files
+
 * content
 {:toc}
 
-Android Studio并没有将指定的目录识别成安卓工程，sync一下就好了  
-<!-- more -->
-
-file->sync project with gradle files
 

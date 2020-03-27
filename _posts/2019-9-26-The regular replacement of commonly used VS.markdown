@@ -6,12 +6,9 @@ categories: 测试结果杂记
 tag: 4
 ---
 
-* content
-{:toc}
-
 匹配整体替换
-<!-- more -->
 
+<!-- more -->
 
 > 查找：.*  
 >  替换：$1  
@@ -26,4 +23,8 @@ tag: 4
 >  栗子：将u8"str"替换为tr(“str”)  
 >  查找：u8"([^"]*)"  
 >  替换：tr("$1")
+
+* content
+{:toc}
+
 

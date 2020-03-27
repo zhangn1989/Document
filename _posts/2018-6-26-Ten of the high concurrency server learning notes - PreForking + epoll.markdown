@@ -6,12 +6,9 @@ categories: 一步步打造高并发服务器
 tag: 4
 ---
 
-* content
-{:toc}
-
 这个就不多说了，各种模型的一种综合应用，最终目的就是尽一切手段去压榨服务器资源，完整代码[戳这里](https://github.com/zhangn1989/MyRPC)​​​​​​​
-<!-- more -->
 
+<!-- more -->
 
     
     
@@ -211,4 +208,8 @@ tag: 4
     	exit(EXIT_SUCCESS);
     }
     
+
+* content
+{:toc}
+
 

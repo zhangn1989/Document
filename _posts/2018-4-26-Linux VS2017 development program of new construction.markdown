@@ -6,12 +6,9 @@ categories: VS2017开发Linux程序
 tag: 4
 ---
 
-* content
-{:toc}
-
 使用vs2017开发linux程序，首先要安装linux开发组件，可以在安装时就选中，也可以在安装完成后使用在线安装工具进行安装，如下图所示，选中那只企鹅。
-<!-- more -->
 
+<!-- more -->
 
 ![](https://img-
 blog.csdn.net/20180426144328162?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
@@ -50,6 +47,10 @@ Studio\2017\Enterprise\Common7\IDE\VC\Linux\include\usr\include
 
 本篇先简单介绍这么多，下一篇将一unzip的源码为例，介绍如何编译一个已有的makefile工程。
 
-更多内容详见微软的官方云笔记文章https://blogs.msdn.microsoft.com/vcblog/2016/03/30/visual-c-
+更多内容详见微软的官方博客文章https://blogs.msdn.microsoft.com/vcblog/2016/03/30/visual-c-
 for-linux-development/
+
+* content
+{:toc}
+
 

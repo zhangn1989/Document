@@ -6,12 +6,9 @@ categories: C++从零开始区块链
 tag: 4
 ---
 
-* content
-{:toc}
-
 区块链的对外展示主要是以json的形式，我们先来定义一下json，主要是说明格式，数据什么的我瞎写的。实际应用中应该加入一个随机值用作校验，这里就不加了
-<!-- more -->
 
+<!-- more -->
 
     
     
@@ -66,4 +63,8 @@ json对应的C++结构体
                 this->proof == value.proof;
         }
     } Block;
+
+* content
+{:toc}
+
 

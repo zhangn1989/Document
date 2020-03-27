@@ -6,12 +6,9 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
-* content
-{:toc}
-
 本篇对OpenGL学习过程中遇到的关键的矩阵运算做一个总结，方便以后查阅。  
-<!-- more -->
 
+<!-- more -->
 
 ### 文章目录
 
@@ -256,4 +253,8 @@ process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9n
 # 应用
 
 具体应用看下篇[OpenGL学习笔记：数学基础和常用矩阵总结（二）](https://blog.csdn.net/mumufan05/article/details/100045770)
+
+* content
+{:toc}
+
 

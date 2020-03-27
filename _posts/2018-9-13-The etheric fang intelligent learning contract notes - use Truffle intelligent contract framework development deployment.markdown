@@ -6,12 +6,9 @@ categories: 以太坊智能合约
 tag: 4
 ---
 
-* content
-{:toc}
-
 truffle是一个智能合约的开发框架，具体的就不介绍了，我们主要是说说怎么使用这个框架来进行智能合约的开发，官网[戳这里](https://truffleframework.com)。
-<!-- more -->
 
+<!-- more -->
 
 ### 文章目录
 
@@ -240,4 +237,8 @@ host和port改成上面输出的IP和端口
 输入“voting =
 [Voting.at](http://Voting.at)(“0x27f77eeae7d192c300d5776acb782cc971fc8423”)”，那个大长串的十六进制就是合约的地址  
 然后就和在truffle的内建测试网络交互一样了。
+
+* content
+{:toc}
+
 

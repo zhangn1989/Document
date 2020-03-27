@@ -6,12 +6,9 @@ categories: 以太坊智能合约
 tag: 4
 ---
 
-* content
-{:toc}
-
 没搞过web程序，花了几天研究一下，总算是搞懂了网页与以太坊节点的交互流程。  
-<!-- more -->
 
+<!-- more -->
 网页与智能合约交互，需要使用web3.js，它实现了通用JSON PRC规范，通过JSON
 RPC协议与以太坊节点进行交互。除了js以外，以太坊还提供了Java、Python等语言的API，对于没有提供API的语言，只能自己直接使用JSON
 RPC来与以太坊进行交互了，关于以太坊的JSON
@@ -92,4 +89,8 @@ HttpProvider的IP不能是127.0.0.1，这里被坑惨了。
 ![](https://img-
 blog.csdn.net/20180918170459122?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211bXVmYW4wNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)  
 在Candidate中输入人名，点击votes进行投票，点击query查询结果，结果显示在Votes中。
+
+* content
+{:toc}
+
 

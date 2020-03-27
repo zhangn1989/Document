@@ -6,12 +6,9 @@ categories: OpenGL学习笔记
 tag: 4
 ---
 
-* content
-{:toc}
-
 这一章需要有矩阵相关的数学知识，如果相关知识薄弱，可以先去复习一下线性代数中矩阵相关的内容，或者先看一下这两篇文档：[OpenGL学习笔记：数学基础和常用矩阵总结（一）](https://blog.csdn.net/mumufan05/article/details/100041164)和[OpenGL学习笔记：数学基础和常用矩阵总结（二）](https://blog.csdn.net/mumufan05/article/details/100045770)  
-<!-- more -->
 
+<!-- more -->
 本例新加入一个叫做GLM的矩阵数学库，官网[在这里](https://glm.g-truc.net/)
 
     
@@ -361,4 +358,8 @@ tag: 4
     	return 0;
     }
     
+
+* content
+{:toc}
+
 
