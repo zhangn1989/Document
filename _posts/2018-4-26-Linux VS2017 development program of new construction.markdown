@@ -50,6 +50,6 @@ Studio\2017\Enterprise\Common7\IDE\VC\Linux\include\usr\include
 
 本篇先简单介绍这么多，下一篇将一unzip的源码为例，介绍如何编译一个已有的makefile工程。
 
-更多内容详见微软的官方博客文章https://blogs.msdn.microsoft.com/vcblog/2016/03/30/visual-c-
+更多内容详见微软的官方云笔记文章https://blogs.msdn.microsoft.com/vcblog/2016/03/30/visual-c-
 for-linux-development/
 

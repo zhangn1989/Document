@@ -81,10 +81,10 @@ abbr {text-decoration: none;}
 <li><a href="https://placeholder.com/" target="_blank"><abbr title="提供占位符图片的网站">PLACEHOLDER.COM</abbr></a></li>
 <li><a href="https://dummyimage.com/" target="_blank"><abbr title="提供多类型占位符图片的网站">Dummy Image Generator</abbr></a></li>
 </ol>
-<hr><h4 class="btn btn-primary btn-lg">博客</h4><hr>
+<hr><h4 class="btn btn-primary btn-lg">云笔记</h4><hr>
 <ol class="rounded-list">
-<li><a href="http://zhangn1989.github.io/" target="_blank">zhangn的博客</a></li>
-<li><a href="http://ghmagical.com/" target="_blank">TG的博客</a></li>
+<li><a href="http://zhangn1989.github.io/" target="_blank">zhangn的云笔记</a></li>
+<li><a href="http://ghmagical.com/" target="_blank">TG的云笔记</a></li>
 <li><a href="http://2ality.com/p/about.html" target="_blank">2ality</a></li>
 </ol>
 <hr><h4 class="btn btn-info btn-lg">各大公司的前端站点</h4><hr>
@@ -105,7 +105,7 @@ abbr {text-decoration: none;}
 <li><a href="https://developers.google.com/speed/pagespeed/insights/?hl=zh-CN" target="_blank">PageSpeed Insights</a></li>
 <li><a href="http://en.cppreference.com/w/" target="_blank">C++ 参考手册</a></li>
 <li><a href="https://developers.google.com/web/tools/chrome-devtools/" target="_blank">Chrome DevTools</a></li>
-<li><a href="http://code.flickr.net/" target="_blank">Flickr 技术博客</a></li>
+<li><a href="http://code.flickr.net/" target="_blank">Flickr 技术云笔记</a></li>
 <li><a href="http://gen.lib.rus.ec/#" target="_blank">Library Genesis</a></li>
 
 </ol>
