@@ -140,7 +140,7 @@ def html2Markdown(html):
     fp.write(mdText)
     fp.close()
 
-if __name__ == '__main__':
+def getSbdnPosts():
     i = 1
     while 1:
         # 每个用户都有这么一个url做为文章列表，后面的数字就是列表分页后的页号
@@ -163,3 +163,6 @@ if __name__ == '__main__':
             # 获取到每篇文章的页面信息后将其转换为Markdown文档
             html2Markdown(strhtml.text)
         i = i + 1  
+
+if __name__ == '__main__':
+    getSbdnPosts()
