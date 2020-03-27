@@ -1,4 +1,22 @@
 #-*- coding: utf-8 -*-
+
+# 脚本功能：批量爬取sbdn某一用户下所有文章并转为包含jekyll文件头的Markdown文档，支持获取文中图片并修改为本地url
+# 整体思路：简单分析sbdn的页面，在前台的html上包含所有想要的信息，只要分析html上的信息进行检索即可
+#          每个用户都有一个查询所有文章列表的url，其组成就是固定路径加分页索引，简单循环枚举即可获取所有文章列表信息
+#          在文章列表页面上，每篇文章的列表信息中又包含有文章的URL，可以直接读取，然后爬取文章的页面
+#          从文章的页面中，可以读取包括文章内容在内的所有想要的信息
+#          取出标题、时间、分类、文章内容等所需信息，其中文章内容要保留html的文件格式，其他信息可以直接读取内容
+#          通过html2text库将html格式的文章内容转换为Markdown格式
+#          找到文章中的图片URL，下载图到本地，然后将sbdn的图片URL转换为本地图片的URL
+#          再用所有信息组拼成包含包含jekyll文件头的Markdown文档，并以标题名为文件名保存到本地
+#          由于jekyll对中文路径支持的不好，需要将中文文件名翻译成英文，并转换所有非法文件名字符，本例调用的是有道翻译的网络接口
+# 不足之处：没找到标签信息，转换后标签信息丢失
+# 意外收获：删除本地保存部分，可以用来刷sbdn的阅读量
+# 原始连接：https://github.com/zhangn1989/zhangn1989.github.io.git
+# 联系作者：zhangnan6419@163.com
+#          https://github.com/zhangn1989
+#          https://zhangn1989.github.io
+
 import re
 import time
 import requests
@@ -126,7 +144,7 @@ if __name__ == '__main__':
     i = 1
     while 1:
         # 每个用户都有这么一个url做为文章列表，后面的数字就是列表分页后的页号
-        url = 'https://blog.csdn.net/mumufan05/article/list/' + str(i)
+        url = 'https://blog.sbdn.net/mumufan05/article/list/' + str(i)
         strhtml = requests.get(url)
         soup=BeautifulSoup(strhtml.text,'lxml')
         # 如果页号超出范围（比如只有3页但访问到第4页）返回的页面回包含下面这个信息，如果返回的页面有这个信息说明所有页面遍历完成，可以退出了
