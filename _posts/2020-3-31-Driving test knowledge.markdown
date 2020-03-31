@@ -57,6 +57,7 @@ tag: 驾照
 |大型客车（A1）|26-50|
 
 70周岁以后驾驶C1、C2、C5、F需**每年**进行体检
+
 ![](/styles/images/blog/Driving test knowledge_1.png)
 
 ### 身体条件
