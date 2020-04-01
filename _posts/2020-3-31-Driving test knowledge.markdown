@@ -464,6 +464,36 @@ tag: 驾照
 
 ![](/styles/images/blog/Driving test knowledge_10.png)
 
+### 指示标志
+
+表示指示车辆、行人行进的含义。车辆行人要遵循的标志。颜色为蓝底、白图案，形状分为圆形、长方形和正方形
+
+![](/styles/images/blog/Driving test knowledge_11.png)
+
+![](/styles/images/blog/Driving test knowledge_12.png)
+
+### 指路标志
+
+是传递道路方向、地点、距离信息的标志，形状为长方形和正方形，颜色为蓝底、白色图案，高速公路为绿底、白图案
+
+![](/styles/images/blog/Driving test knowledge_13.png)
+
+### 旅游区标志
+
+![](/styles/images/blog/Driving test knowledge_14.png)
+
+### 作业区标志
+
+![](/styles/images/blog/Driving test knowledge_15.png)
+
+### 辅助标志
+
+![](/styles/images/blog/Driving test knowledge_16.png)
+
+### 告示标志
+
+![](/styles/images/blog/Driving test knowledge_17.png)
+
 
 
 
