@@ -454,7 +454,15 @@ tag: 驾照
 
 ![](/styles/images/blog/Driving test knowledge_7.png)
 
+### 禁令标志
 
+表示禁止或限制及相应解除的含义。车辆、行人要严格遵守的标志，颜色除个别标志外，为白底，红圈，黑图案，图案压杠，形状分为圆形、八角形，顶角向下的等边三角形
+
+![](/styles/images/blog/Driving test knowledge_8.png)
+
+![](/styles/images/blog/Driving test knowledge_9.png)
+
+![](/styles/images/blog/Driving test knowledge_10.png)
 
 
 
