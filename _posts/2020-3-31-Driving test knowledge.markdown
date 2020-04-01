@@ -182,7 +182,9 @@ tag: 驾照
 #### 实习期注意事项
 
 1. 在实习期内驾驶机动车的，应当在车身后部粘贴或悬挂统一样式的实习标志
- ![]/styles/images/blog/Driving test knowledge_2.png)
+
+![]/styles/images/blog/Driving test knowledge_2.png)
+
 2. 
 
 ## 驾驶证的审验、注销、驾驶人体检
