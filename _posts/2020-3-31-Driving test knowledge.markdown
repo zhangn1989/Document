@@ -515,18 +515,59 @@ tag: 驾照
 
 禁止标线是用以告示道路交通的遵行、禁止、限制等特殊规定，车辆驾驶人及行人需严格最受的标线
 
-
+![](/styles/images/blog/Driving test knowledge_20.png)
 
 ### 警告标线
 
+用以促使车辆驾驶人及行人了解道路特殊情况，提高警觉，准备防范或采取应变措施的标线
+
+![](/styles/images/blog/Driving test knowledge_21.png)
+
 ### 交通警察手势
 
+交通警察的指挥是最有效，最直接的交通指挥信号，交通警察的手势信号，要优于其他道路的交通信号。这是因为交通警察有权利，根据道路交通的通行情况，依照职权采取维护道路安全与畅通的道路管理措施，及时处理交通拥堵现象。因此，在遇有交通警察的指挥手势信号，与其他交通道路信号不一致时，应当服从交通警察指挥。    
+交通警察指挥手势信号分为8种，分别是停止、直行、左转弯、左转弯待转、右转弯、变道、减速慢行、示意车辆靠边停车。
 
+#### 停止信号
 
+![](/styles/images/blog/Driving test knowledge_22.png)
 
+#### 示意车辆靠边停车信号
 
+![](/styles/images/blog/Driving test knowledge_23.png)
 
+#### 左转弯信号
 
+![](/styles/images/blog/Driving test knowledge_24.png)
+
+#### 右转弯信号
+
+![](/styles/images/blog/Driving test knowledge_25.png)
+
+#### 编导信号
+
+![](/styles/images/blog/Driving test knowledge_26.png)
+
+#### 减速慢行信号
+
+![](/styles/images/blog/Driving test knowledge_27.png)
+
+#### 左转弯待转信号
+
+![](/styles/images/blog/Driving test knowledge_28.png)
+
+#### 直行信号
+
+![](/styles/images/blog/Driving test knowledge_29.png)
+
+#### 需要交警现场指挥的情形
+
+1. 交通信号灯出现故障时
+2. 交通信号灯不适用大量交通流时
+3. 道路发生交通事故
+4. 恶劣气象条件
+
+交通警察在夜间没有路灯，照明不良或者遇雨、雪、雾、沙尘、冰雹等，低能见度气象条件下执勤时，可以右手持指挥棒按规定疏导交通
 
 
 
