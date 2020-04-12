@@ -2,7 +2,7 @@
 layout: post
 title: C++ new
 date: 发布于2020-04-12 09:00:00 +0800
-categories: C++
+categories: C++内存管理
 tags: c++ new 内存
 ---
 
@@ -84,21 +84,134 @@ delete psa;
 
 ![](/styles/images/blog/c++new_2.png)
 
-    由于string类的内部使用动态堆内存来保存字符串，new[]分配的内存的cookie只记录了string类的信息，而类内部的动态堆内存信息由每个实例自行管理，不在new[]的cookie中。  
+由于string类的内部使用动态堆内存来保存字符串，new[]分配的内存的cookie只记录了string类的信息，而类内部的动态堆内存信息由每个实例自行管理，不在new[]的cookie中。  
 
 前面说过，delete释放内存的过程是先调用析构函数，再释放内存。在本例中，如果使用delete[]来释放内存，会依次调用每个实例的析构函数，每个析构函数会自行释放自己内部的堆内存，然后在释放new的内存块。但是如果使用delete来释放内存，只会是第一个实例调用一次析构函数，另外两个实例不会调用，然后根据cookie中记录的内存大小释放有new分配的内存，另两个实例中的堆内存就泄露了。  
 
 也就是说，对于上图string的例子，如果使用delete直接释放内存，泄露的是str2和str3箭头右边的白色区域所示的内存，而pas箭头右边的绿色区域是能够正确释放的（具体是调用的str1还是str3取决于编译器的具体实现，理解意思即可）。  
 
-但是，这不意味着你可以在类内部没有堆内存的情况下就可以毫无顾忌的使用delete来释放new[]，这是编码规范的问题，使用delete不一定有错，但使用delete[]则是一定没错。  
+但是，这不意味着你可以在类内部没有堆内存的情况下就可以毫无顾忌的使用delete来释放new[]，这是编码规范的问题，使用delete不一定有错，但使用delete[]则是一定没错。
+
+# new的内存分布
 
 下图是vc6中new的内存布局
 
 ![](/styles/images/blog/c++new_3.png)
 
-# 构造和析构函数直接调用
+我们得到的是图中0x00441c30这一部分的指针，但实际上内存管理的是图中所有的一大块内存，其中橘黄色部分只有在debug模式下才有。由于内存管理需要是16的倍数，如果不够16的倍数，则添加一些数据凑到16的倍数，图中蓝色的pad部分就是添加的无用数据。图中61h部分就是cookie，上下部分分别为上cookie和下cookie。由于本例使用的是int类型举例，而int没有析构不析构的，所以可以直接使用delete就能完整释放整块内存。这里这么写是为了让读者加深理解，实际编码的时候要加上[]，这里对比一下下图
 
+![](/styles/images/blog/c++new_4.png)
 
+这张图使用的类型是一个类，用new[]分配内存的时候，返回的指针和调试信息中间多出来一块内存用来记录实例的个数，就是图中的3。这中情况，如果使用delete[]来释放内存，会正确索引到实例的首地址进行释放操作，如果使用delete来释放内存，索引到的内存是记录实例个数的整型数据位置，如果从这里开始按找该类的内存结构进行析构，肯定是会出问题的，整个内存结构都乱了。  
+
+这里有个地方需要注意，这里的delete和delete[]部分看起来和```new[]和delete[]```小结中介绍的有些矛盾，老师是怎么讲的，由于是看的盗版网课，也没办法请教老师，具体是怎么情况我也不太清楚。猜测是因为不同编译器具体实现时，3的位置不同，有的在前面，有的在后面，关键是看具体实现，在前面的情况就是矛盾的，在后面就没事，关键是领会精神。
+
+# placement new
+
+placement new 允许我们将对象构建于一个已经分配的内存当中
+没有所谓的placement delete，因为placement根本就没有分配内存，它只是使用了一个已经分配好的内存，所以不需要配套的释放操作，具体用法如下
+
+```c++
+
+#include <new>
+
+// 分配内存
+char *buf = new char[sizeof(Complex) * 3];
+
+// 在分配好的内存上构造Complex
+Complex *pc = new(buf)Complex(1, 2);
+
+// 注意这里要释放的指针
+// 感觉如果直接释放pc应该也没错
+// 手上没环境不能测试，以后有时间测一下
+delete[] buf;
+
+```
+
+# new失败处理
+
+在纯C中使用malloc来分配内存，需要判断一下返回的指针，如果返回一个空指针，则代表内存分配失败。
+到了c艹中，使用new来分配内存，则无法通过判断空指针的方法判断是否失败。因为在c艹中，如果new失败会抛出异常，代码是走不到判断空指针的语句的。new失败正确处理方法有以下几种
+
+## 捕捉异常
+
+```C++
+
+try 
+{
+    int* p = new int[SIZE];
+    // 其它代码
+} catch ( const bad_alloc& e ) 
+{
+    return -1;
+}
+
+```
+
+据说古老的c++编译器new失败不会抛异常，而是和malloc一样返回空指针，因为那时候c++还没有异常机制，坊间流传，也懒得考证，了解以下即可。顺便吐槽一下，说c艹的异常是屎，这是对屎的侮辱，屎还能当肥料种地呢，c艹的异常除了捣乱没任何鸟用。
+
+## 禁用new的异常
+
+```c++
+
+ int* p = new (std::nothrow) int; // 这样如果 new 失败了，就不会抛出异常，而是返回空指针
+
+```
+
+## new-handler
+
+文章开始介绍new源码的时候提到过，new实现的时候会调用new-handler的回调函数，在new之前设置好回调函数即可。由于此方法太过麻烦，懒得研究，具体用法读者自行查找相关资料。
+
+# 重载
+
+![](/styles/images/blog/c++new_5.png)
+
+重载的时候，一般不重载全局的::operator new，因为全局的影响太大，一般只重载类自身的Foo::operator new。    
+
+重载一般在内存池中用的比较多，可以减少cookie    
+
+## 重载全局的::operator new
+
+```c++
+
+void *myAlloc(size_t size)
+{ return malloc(size); }
+
+void myFree(void *p)
+{ free(p); }
+
+// 下面代码实现部分不重要，关键看接口的重载
+// 它们不可以被声明在一个namespace内
+inline void *operator new(size_t size)
+{ cout << "global new()\n"; return myAlloc(size); }
+
+inline void *operator new[](size_t size)
+{ cout << "global new[]()\n"; return myAlloc(size); }
+
+inline void operator delete(void *p)
+{ cout << "global delete()\n"; return myFree(p); }
+
+inline void operator delete[](void *p)
+{ cout << "global delete[]()\n"; return myFree(p); }
+
+```
+
+## 重载局部的Foo::operator new
+
+```c++
+
+class Foo
+{
+public:
+    void *operator new(size_t);
+    void operator delete(void*);
+};
+
+```
+
+需要注意的是，重载局部的new和delete必须是static的，因为new调用时是内存对象创建过程当中，此时还没有一个完整的内存对象，无法通过对象来调用一般的函数。由于必须是static的，不管写不写static，编译器都会当成是static处理。    
+
+数组版本也是一样的，只是都加了一个[]，这里就不再写一次了    
 
 
 
