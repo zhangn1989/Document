@@ -213,17 +213,40 @@ public:
 
 数组版本也是一样的，只是都加了一个[]，这里就不再写一次了    
 
+## 重载placement new
 
+placement new的括号中不一定非要放指针，我们可以自己来定义放任意的东西。放指针的版本是标准库中先写好给我们用的，我们也可以通过重载placement new来自定义所放的数据，比如```Foo *pf = new(300, 'c')Foo;```。可以重载为多种参数形式，但多个重载的参数列形式不能重复，必须满足普通函数重载的条件。其中第一个参数必须是size_t，用来传递类的大小，该参数类似于成员函数的this指针，在调用时自动传递，不需要显示传递。比如在```Foo *pf = new(300, 'c')Foo;```中，其声明形式为```void *operator new(size_t, int, char);```。如果内存不是外部申请好的，需要在placement new函数内部去申请内存。
 
+重载new的时候应该对应重载一个相同形式的delete。但重载placement delete时需要注意，只有在placement new中产生异常，才会调用其对应的placement delete函数。c++这么设计的原因是，在调用placement new函数后，如果内存是由在placement new内申请的，在调用构造函数时如果发生了异常，可以在对应的在placement delete函数中将在placement new中申请的内存释放掉。    
 
+如果没有对应形式的delete，编译器也不会报错，编译器会认为你放弃处理该形式的new中产生的异常（个别编译器会给个警告）     
 
+```c++
 
+class Foo
+{
+public:
 
+    // 重载一个一般形式的operator new
+    void *operator new(size_t);
 
+    // 标准库中placement new的重载形式
+    void *operator new(size_t, void *);
 
+    // Foo *pf = new(300, 'c')Foo;调用形式的重载方式
+    void *operator new(size_t, int, char);
 
+    // 随便写的一种重载形式
+    void *operator new(size_t, size_t, char *, int);
 
+    // 以下是对应的delete
+    void *operator delete(void *, size_t);
+    void *operator delete(void *, void *);
+    void *operator delete(void *, int, char);
+    void *operator delete(void *, size_t, char *, int);
+};
 
+```
 
-
+std::string中就是一个很好的placement new重载，有兴趣的朋友可以去看string的源码    
 
