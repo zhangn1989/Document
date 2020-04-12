@@ -92,6 +92,10 @@ delete psa;
 
 但是，这不意味着你可以在类内部没有堆内存的情况下就可以毫无顾忌的使用delete来释放new[]，这是编码规范的问题，使用delete不一定有错，但使用delete[]则是一定没错。  
 
+下图是vc6中new的内存布局
+
+![](/styles/images/blog/c++new_3.png)
+
 # 构造和析构函数直接调用
 
 
