@@ -1,19 +1,19 @@
 ---
 layout: post
-title: pre-class allocator
+title: 小型内存池
 date: 发布于2020-04-12 13:00:00 +0800
 categories: C++内存管理
 tags: c++ new 内存 内存池 内存管理
 ---
 
-* content
-pre-class allocator中文译作类前分配器，用于类内部的内存管理。    
+* content    
 我们都知道，不管是用new还是用malloc，每次系统分配内存的时候都要占用系统资源的。而且每次我们向操作系统分配内存的时候，得到的都是包含cookie的内存块，其实际大小要大于我们所申请的内存大小。    
 对于频繁申请内存的情况，我们可以一次向系统申请一大块内存，然后自己管理，这样既能节省系统调用的时间，能节省多个cookie所占用的空间。    
-这种做法在全局的内存管理中叫内存池，在单个类的内部就是本文所说的pre-class allocator，叫法不同，其实是一个东西。
 <!-- more -->
 
-# 第一版最简单的实现
+# pre-class allocator
+
+## 第一版最简单的实现
 
 ``` c++
 
@@ -72,7 +72,7 @@ void Screen::operator delete(void *p)
 
 ```
 
-# 第二个版本
+## 第二个版本
 
 ```c++
 
