@@ -1,0 +1,96 @@
+---
+layout: post
+title: C++ new
+date: 发布于2020-04-12 09:00:00 +0800
+categories: C++
+tags: c++ new 内存
+---
+
+
+# new expression
+new一个类型，会创建一个该类型的内存，然后调用构造函数，最后返回该内存的指针
+注意：该操作是原子性的。
+在vc6中的实现如下
+
+``` c++
+
+void *operator new(size_t size, const std::nothrow_t &) _THROW0()
+{
+    void *p
+    while((p = malloc(size)) == 0)
+    {
+        // 如果调用malloc失败后会调用_callnewh
+        // _callnewh含义是call new handler，简单说就是用户设定一个回调函数
+        // 使用_set_new_handler来设置，通常是用户自己控制释放一些不用的内存
+        _TRY_BEGIT
+            if(_callnewh(size) == 0) break;
+        _CATCH(std::bad_alloc) return (0);
+        _CATCH_END
+    }
+    return (p);
+}
+
+```
+
+# delete expression
+delete 一个指针，先调用析构函数，然后释放内存
+在vc6中的实现如下
+
+``` c++
+
+void *operator delete(void *p) _THROW0()
+{
+    free(p);
+}
+
+```
+
+# new[]和delete[]
+Complex *pca = new Complex[3];
+调用三次Complex的构造函数，分配三个Complex对象
+delete[] pca;
+释放内存。
+如果这里的delete[]只写写成delete会怎么样？好多人一定会说：会内存泄露。
+其实正确的答案是不确定，具体需要看Complex类的内部有没有堆内存
+new[]后内存是怎么样的呢？看下图
+
+![](/styles/images/blog/c++new_1.png)
+
+关键是看图中的cookie部分，存放了一些内存相关的数据，其中最关键的是在cookie中存放了分配内存的大小
+
+再来看一下下面的代码
+
+```c++
+
+string *psa = new string[3];
+delete psa;
+
+```
+
+执行完该代码后内存分配如下
+
+![](/styles/images/blog/c++new_2.png)
+
+由于string类的内部使用动态堆内存来保存字符串，new[]分配的内存的cookie只记录了string类的信息，而类内部的动态堆内存信息由每个实例自行管理，不在new[]的cookie中。
+前面说过，delete释放内存的过程是先调用析构函数，再释放内存。在本例中，如果使用delete[]来释放内存，会依次调用每个实例的析构函数，每个析构函数会自行释放自己内部的堆内存，然后在释放new的内存块。但是如果使用delete来释放内存，只会是第一个实例调用一次析构函数，另外两个实例不会调用，然后根据cookie中记录的内存大小释放有new分配的内存，另两个实例中的堆内存就泄露了。
+也就是说，对于上图string的例子，如果使用delete直接释放内存，泄露的是str2和str3箭头右边的白色区域所示的内存，而pas箭头右边的绿色区域是能够正确释放的。
+但是，这不意味着你可以在类内部没有堆内存的情况下就可以毫无顾忌的使用delete来释放new[]，这是编码规范的问题，使用delete不一定有错，但使用delete[]则是一定没错。
+
+# 构造和析构函数直接调用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
