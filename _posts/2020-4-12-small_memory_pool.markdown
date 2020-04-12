@@ -65,7 +65,6 @@ void Screen::operator delete(void *p)
 {
     // freeStore指向下一块未使用的内存
     // 这里将自身设置为下一块未使用，就是删除了
-    // 这个实现方式还有很多问题，看看就行，关键是领会思想
     (static_cast<Screen *>(p))->next = freeStore;
     freeStore = static_cast<Screen *>(p);
 }
@@ -86,8 +85,7 @@ private:
     };
 
 private:
-// 这个联合体的用法叫嵌入式指针
-// 感觉这个方法针对性太强，通用性很差，看看就行了
+    // 这个联合体的用法叫嵌入式指针
     union
     {
         AirplaneRep rep;
@@ -160,3 +158,111 @@ void Airplane::operator delete(void *deadObject)
 ```
 
 与第一版最大的区别是用union中使用了嵌套指针。
+
+# static allocator
+
+这个就是对上面内存管理部分给抽象出来，以后可以直接调用
+
+```c++
+
+class allocator
+{
+private:
+    // 这个用法类似于内核中链表的用法
+    // 把数据域完全从元素中删除，采用数据包裹指针的形式使用链表
+    struct obj
+    {
+        struct obj *next;
+    };
+
+public:
+    void *allocate(size_t);
+    void deallocate(void *);
+
+private:
+    obj * freeStore = nullptr;
+    const int CHUNK = 5;
+};
+
+void *allocator::allocate(size_t size)
+{
+    obj *p;
+    if(freeStore)
+    {
+        size_t chunk = CHUNK * size;
+        freeStore = p = (obj*)malloc(chunk);
+
+        for(int i = 0; i < (CHECK - 1); ++i)
+        {
+            p->next = (obj *)((char *)p + size);
+            p = p->next
+        }
+
+        p->next = nullptr;
+    }
+
+    p = freeStore;
+    freeStore = freeStore->next;
+    return = p;
+}
+
+void allocator::deallocate(void *p)
+{
+    ((obj *)p)->next = freeStore;
+    freeStore = (obj *)p;
+}
+
+// 下面是用法距离
+
+class Foo
+{
+public:
+    long L;
+    string str;
+    static allocator myAlloc;
+
+public:
+    Foo(long l):L(l) { }
+    static void *operator new(size_t size)
+    {
+        return myAlloc.allocate(size);
+    }
+    static void operator delete(void *p)
+    {
+        return myAlloc.deallocate(p);
+    }
+}
+
+allocator Foo::myAlloc;
+
+```
+# macro for static allocator
+
+再懒一点，改写成宏
+
+```c++
+
+#define DECLARE_POOL_ALLOC() \
+public : \
+    void *operator new(size_t size) { return myAlloc.allocate(size); } \
+    void operator delete(void *p) { myAlloc.deallocate(p); } \
+protected: \
+    static allocator myAlloc;
+
+#define IMPLEMENT_POOL_ALLOC(class_name) \
+allocator class_name::myAlloc;
+
+class Foo
+{
+    DECLARE_POOL_ALLOC();
+public:
+    long L;
+    string str;
+public:
+    Foo(long l):L(l) {}
+};
+
+IMPLEMENT_POOL_ALLOC(Foo);
+
+```
+
